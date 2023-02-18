@@ -1,4 +1,9 @@
-
+$$
+x \times y
+= (a\times 10^{\frac{n}{2}} + b) \times (c\times 10^{\frac{n}{2}} + d)
+= 
+= a\times c\times 10^n + (a\times d + b\times c)\times 10^{\frac{n}{2}} + b \times d
+$$
 ###  ###
 
 ## 1.大整数乘法 ##

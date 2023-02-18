@@ -1,5 +1,13 @@
 site_name: 算法
 
+nav:
+    - 算法:
+        - algo/algo.md
+    - linux:
+        - linux/index.md
+        - linux/ko.md
+        - linux/linux.md
+    
 extra_css:
     - res/extra.css
 extra_javascript:
