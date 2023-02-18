@@ -11,9 +11,10 @@ Linus Torvalds, 开源免费, lsb_release -a;
 重点掌握系统的组成、功能及作用。
 
 ```
-组成: kernel + shell + file system + app
-功能: 
-作用: 
+kernel - 操作系统的核心，具有很多最基本功能，如虚拟内存、多任务、共享库
+shell - 提供了用户与内核进行交互操作的一种接口
+file system - 提供文件存放在磁盘等存储设备上的组织方法
+application - 应用程序的程序集，如文本编辑器、编程语言、XWindow、数据库
 ```
 
 7、掌握shell字符界面：SSH端口（22）；普通用户和超级用户默认的提示符（$、#），PS1、PS2变量设置方法及作用，命令补齐键（Tab）；多个命令分隔符（；）等
@@ -30,7 +31,7 @@ Linus Torvalds, 开源免费, lsb_release -a;
 重点掌握Linux文件系统建立和使用的步骤（分区fdisk、格式化分区mkfs、挂载mount）。
 
 ```sh
-分区 - fdisk -l (查看系统上的硬盘, 找到需要分区的硬盘); fdisk <硬盘> (新建分区, 设置分区类型, 保存分区)
+硬盘分区 - fdisk -l (查看系统上的硬盘, 找到需要分区的硬盘); fdisk <硬盘> (新建分区, 设置分区类型, 保存分区)
 格式化分区 - mkfs -t <文件系统类型, 如ext3> <设备, 如/dev/sd5>
 挂载 - mount <设备> <目录>
 ```
@@ -101,8 +102,8 @@ Linus Torvalds, 开源免费, lsb_release -a;
 shell基本格式 - #!/bin/bash开头，脚本有可执行权限，文件格式为 .sh
 shell执行方式 - sh解析器, bash解释器, 仅路径执行方式
 shell脚本变量
-	- 环境变量 - 用export定义; 可通过env查看所有环境变量
-	- 系统变量
+	- 环境变量 - 可用export定义; 可通过env查看所有环境变量
+	- 系统变量(位置参数+预定义变量) - 执行shell脚本时为程序提供的操作参数 (如：$n, $0, $*, $@, $#, $$, $?)
 	- 自定义变量 - 
 (set可查看所有shell变量)
 ```
