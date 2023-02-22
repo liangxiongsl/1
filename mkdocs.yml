@@ -1,12 +1,14 @@
-site_name: 算法
+site_name: 复习
 
 nav:
     - 算法:
         - algo/algo.md
     - linux:
         - linux/index.md
-        - linux/ko.md
+        - linux/大纲.md
         - linux/linux.md
+    - web:
+        - web/java web.md
     
 extra_css:
     - res/extra.css
