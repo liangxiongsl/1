@@ -8,7 +8,9 @@ nav:
         - linux/大纲.md
         - linux/linux.md
     - web:
-        - web/java web.md
+        - web/index.md
+        - web/servlet.md
+        - web/jsp.md
     
 extra_css:
     - res/extra.css
