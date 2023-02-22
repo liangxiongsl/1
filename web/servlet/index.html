@@ -5,10 +5,11 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../../linux/linux/" rel="prev"/>
+<link href="../" rel="prev"/>
+<link href="../jsp/" rel="next"/>
 <link href="https://pic.peo.pw/a/2023/01/12/63bfb934b1b06.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.0.3" name="generator"/>
-<title>Java web - 复习</title>
+<title>Servlet - 复习</title>
 <link href="../../assets/stylesheets/main.6b71719e.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h224V368c0-26.5 21.5-48 48-48h112V96c0-35.3-28.7-64-64-64H64zm384 320H336c-8.8 0-16 7.2-16 16v112l32-32 64-64 32-32z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M96 0C43 0 0 43 0 96v320c0 53 43 96 96 96h320c17.7 0 32-14.3 32-32s-14.3-32-32-32v-64c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H96zm0 384h256v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-40-176h24v-64h-24c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-80c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-144c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M480 32c0-12.9-7.8-24.6-19.8-29.6S434.5.2 425.3 9.3L381.7 53c-48 48-113.1 75-181 75H64c-35.3 0-64 28.7-64 64v96c0 35.3 28.7 64 64 64v128c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V352h8.7c67.9 0 133 27 181 75l43.6 43.6c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V300.4c18.6-8.8 32-32.5 32-60.4s-13.4-51.6-32-60.4V32zm-64 76.7v262.6C357.2 317.8 280.5 288 200.7 288H192v-96h8.7c79.8 0 156.5-29.8 215.3-83.3z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-86.2-346.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1 0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6-13.3 0-24-10.7-24-24v-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1 0-8.4-6.8-15.1-15.1-15.1h-58.3c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM288 352c0 17.7-14.3 32-32 32s-32-14.3-32-32 14.3-32 32-32 32 14.3 32 32z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.1 52.4 442.6 6.5c-1.9-3.9-6.1-6.5-10.5-6.5s-8.5 2.6-10.4 6.5l-16.5 45.9-46 16.8c-4.3 1.6-7.3 5.9-7.2 10.4 0 4.5 3 8.7 7.2 10.2l45.7 16.8 16.8 45.8c1.5 4.4 5.8 7.5 10.4 7.5s8.9-3.1 10.4-7.5l16.5-45.8 45.7-16.8c4.2-1.5 7.2-5.7 7.2-10.2 0-4.6-3-8.9-7.2-10.4l-45.6-16.8zm-132.4 53c-12.5-12.5-32.8-12.5-45.3 0l-2.9 2.9c-22-8-45.8-12.3-70.5-12.3C93.1 96 0 189.1 0 304s93.1 208 208 208 208-93.1 208-208c0-24.7-4.3-48.5-12.2-70.5l2.9-2.9c12.5-12.5 12.5-32.8 0-45.3l-80-80zM200 192c-57.4 0-104 46.6-104 104v8c0 8.8-7.2 16-16 16s-16-7.2-16-16v-8c0-75.1 60.9-136 136-136h8c8.8 0 16 7.2 16 16s-7.2 16-16 16h-8z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 398.9c58.5-41.1 96-104.1 96-174.9C512 100.3 397.4 0 256 0S0 100.3 0 224c0 70.7 37.5 133.8 96 174.9V464c0 26.5 21.5 48 48 48h48v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h64v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h48c26.5 0 48-21.5 48-48v-65.1zM224 256c0 35.3-28.7 64-64 64s-64-28.7-64-64 28.7-64 64-64 64 28.7 64 64zm128 64c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M320 0c17.7 0 32 14.3 32 32v64h128c35.3 0 64 28.7 64 64v288c0 35.3-28.7 64-64 64H160c-35.3 0-64-28.7-64-64V160c0-35.3 28.7-64 64-64h128V32c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zM264 256c0-22.1-17.9-40-40-40s-40 17.9-40 40 17.9 40 40 40 40-17.9 40-40zm152 40c22.1 0 40-17.9 40-40s-17.9-40-40-40-40 17.9-40 40 17.9 40 40 40zM48 224h16v192H48c-26.5 0-48-21.5-48-48v-96c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48h-16V224h16z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M288 0H128c-17.7 0-32 14.3-32 32s14.3 32 32 32v132.8c0 11.8-3.3 23.5-9.5 33.5L10.3 406.2C3.6 417.2 0 429.7 0 442.6 0 480.9 31.1 512 69.4 512h309.2c38.3 0 69.4-31.1 69.4-69.4 0-12.8-3.6-25.4-10.3-36.4L329.5 230.4c-6.2-10.1-9.5-21.7-9.5-33.5V64c17.7 0 32-14.3 32-32S337.7 0 320 0h-32zm-96 196.8V64h64v132.8c0 23.7 6.6 46.9 19 67.1l34.5 56.1h-171l34.5-56.1c12.4-20.2 19-43.4 19-67.1z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64h-64c-35.3 0-64-28.7-64-64V216z"/></svg>');}</style>
@@ -35,7 +36,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#_1">
+<a class="md-skip" href="#1servlet-genericservlet-httpservlet">
           跳转至
         </a>
 </div>
@@ -59,7 +60,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Java web
+              Servlet
             
           </span>
 </div>
@@ -149,7 +150,7 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="./">
+<a class="md-tabs__link md-tabs__link--active" href="../">
         web
       </a>
 </li>
@@ -220,10 +221,12 @@
 </li>
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
-<label aria-expanded="true" class="md-nav__link" for="__nav_3" tabindex="0">
-          web
-          <span class="md-nav__icon md-icon"></span>
+<div class="md-nav__link md-nav__link--index">
+<a href="../">web</a>
+<label for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
 </label>
+</div>
 <nav aria-label="web" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
@@ -233,11 +236,11 @@
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
-          Java web
+          Servlet
           <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
-        Java web
+        Servlet
       </a>
 <nav aria-label="目录" class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">
@@ -245,16 +248,6 @@
       目录
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_1">
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1servlet">
-    1.Servlet
-  </a>
-<nav aria-label="1.Servlet" class="md-nav">
-<ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#1servlet-genericservlet-httpservlet">
     1.Servlet, GenericServlet, HttpServlet
@@ -318,51 +311,9 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#2jsp">
-    2.jsp
-  </a>
-<nav aria-label="2.jsp" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1">
-    1.脚本元素
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#2implicit">
-    2.Implicit对象
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#3_1">
-    3.指令元素
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#4">
-    4.异常
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#5action">
-    5.Action元素
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#6el">
-    6.EL
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#7jstl">
-    7.JSTL
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
+<a class="md-nav__link" href="../jsp/">
+        Jsp
+      </a>
 </li>
 </ul>
 </nav>
@@ -382,16 +333,6 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_1">
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1servlet">
-    1.Servlet
-  </a>
-<nav aria-label="1.Servlet" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
 <a class="md-nav__link" href="#1servlet-genericservlet-httpservlet">
     1.Servlet, GenericServlet, HttpServlet
   </a>
@@ -452,67 +393,12 @@
 </li>
 </ul>
 </nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#2jsp">
-    2.jsp
-  </a>
-<nav aria-label="2.jsp" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1">
-    1.脚本元素
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#2implicit">
-    2.Implicit对象
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#3_1">
-    3.指令元素
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#4">
-    4.异常
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#5action">
-    5.Action元素
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#6el">
-    6.EL
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#7jstl">
-    7.JSTL
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
 </div>
 </div>
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1>Java web</h1>
-<p>java web:</p>
-<ul>
-<li>html, css, js</li>
-<li>servlet ()</li>
-<li>jsp (脚本元素, 隐式对象, 指令元素, action元素, EL, JSTL, 定制tag...)</li>
-</ul>
-<h3 id="_1"></h3>
-<h1 id="1servlet">1.Servlet</h1>
+<h1>Servlet</h1>
 <ul>
 <li>Servlet -&gt; GenericServlet -&gt; HttpServlet</li>
 <li>(Xxx)ServletRequest, (Xxx)ServletResponse -&gt; RequestDispatcher</li>
@@ -760,117 +646,6 @@
 <a href="#__codelineno-15-7" id="__codelineno-15-7" name="__codelineno-15-7"></a>    - `DriverManager.getConnection(&lt;url&gt;, &lt;用户名&gt;, &lt;密码&gt;)`
 <a href="#__codelineno-15-8" id="__codelineno-15-8" name="__codelineno-15-8"></a>    - `&lt;url&gt;` - 如java-mysql: `jdbc:mysql://localhost:3306/&lt;数据库名&gt;`
 </code></pre></div>
-<h1 id="2jsp">2.jsp</h1>
-<div class="highlight"><span class="filename">jsp初始化</span><pre><span></span><code><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a>翻译JSP页面 - JSP translator将JSP翻译为&lt;servlet&gt;.java
-<a href="#__codelineno-16-2" id="__codelineno-16-2" name="__codelineno-16-2"></a>编译JSP页面 - complier编译.java文件
-<a href="#__codelineno-16-3" id="__codelineno-16-3" name="__codelineno-16-3"></a>加载类 - classloader加载类文件
-<a href="#__codelineno-16-4" id="__codelineno-16-4" name="__codelineno-16-4"></a>实例化 - 创建生成的 Servlet 的对象
-<a href="#__codelineno-16-5" id="__codelineno-16-5" name="__codelineno-16-5"></a>初始化 - 容器调用 jspInit() 方法
-<a href="#__codelineno-16-6" id="__codelineno-16-6" name="__codelineno-16-6"></a>请求处理 - 容器调用 _jspService() 方法
-<a href="#__codelineno-16-7" id="__codelineno-16-7" name="__codelineno-16-7"></a>销毁 - 容器调用 jspDestroy() 方法
-</code></pre></div>
-<p>api:</p>
-<ul>
-<li>javax.servlet.jsp</li>
-<li>javax.servlet.jsp.tagext</li>
-</ul>
-<div class="highlight"><span class="filename">javax.servlet.jsp包的接口</span><pre><span></span><code><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a>JspPage
-<a href="#__codelineno-17-2" id="__codelineno-17-2" name="__codelineno-17-2"></a>HttpJspPage
-</code></pre></div>
-<div class="highlight"><span class="filename">javax.servlet.jsp包的类</span><pre><span></span><code><a href="#__codelineno-18-1" id="__codelineno-18-1" name="__codelineno-18-1"></a>JspWriter
-<a href="#__codelineno-18-2" id="__codelineno-18-2" name="__codelineno-18-2"></a>PageContext
-<a href="#__codelineno-18-3" id="__codelineno-18-3" name="__codelineno-18-3"></a>JspFactory
-<a href="#__codelineno-18-4" id="__codelineno-18-4" name="__codelineno-18-4"></a>JspEngineInfo
-<a href="#__codelineno-18-5" id="__codelineno-18-5" name="__codelineno-18-5"></a>JspException
-<a href="#__codelineno-18-6" id="__codelineno-18-6" name="__codelineno-18-6"></a>JspError
-</code></pre></div>
-<div class="highlight"><span class="filename">常用接口方法(均是回调方法)</span><pre><span></span><code><a href="#__codelineno-19-1" id="__codelineno-19-1" name="__codelineno-19-1"></a>JspPage:
-<a href="#__codelineno-19-2" id="__codelineno-19-2" name="__codelineno-19-2"></a>    - jspInit()
-<a href="#__codelineno-19-3" id="__codelineno-19-3" name="__codelineno-19-3"></a>    - jspDestroy()
-<a href="#__codelineno-19-4" id="__codelineno-19-4" name="__codelineno-19-4"></a>HttpJspPage:
-<a href="#__codelineno-19-5" id="__codelineno-19-5" name="__codelineno-19-5"></a>    - _jspService()
-</code></pre></div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<ul>
-<li>jsp 特有功能: 往字符串里添加 expression<code>&lt;%= %&gt;</code></li>
-<li>EL 特有功能: 往字符串里添加 EL <code>${}</code></li>
-</ul>
-</div>
-<h2 id="1">1.脚本元素</h2>
-<div class="highlight"><span class="filename">脚本元素</span><pre><span></span><code><a href="#__codelineno-20-1" id="__codelineno-20-1" name="__codelineno-20-1"></a>declaration - &lt;%! %&gt;
-<a href="#__codelineno-20-2" id="__codelineno-20-2" name="__codelineno-20-2"></a>scriptlet - &lt;% %&gt;
-<a href="#__codelineno-20-3" id="__codelineno-20-3" name="__codelineno-20-3"></a>expression - &lt;%= %&gt;
-</code></pre></div>
-<h2 id="2implicit">2.Implicit对象</h2>
-<div class="highlight"><span class="filename">Implicit对象</span><pre><span></span><code><a href="#__codelineno-21-1" id="__codelineno-21-1" name="__codelineno-21-1"></a>对象          类型  
-<a href="#__codelineno-21-2" id="__codelineno-21-2" name="__codelineno-21-2"></a>
-<a href="#__codelineno-21-3" id="__codelineno-21-3" name="__codelineno-21-3"></a>out         JspWriter
-<a href="#__codelineno-21-4" id="__codelineno-21-4" name="__codelineno-21-4"></a>request     HttpServletRequest
-<a href="#__codelineno-21-5" id="__codelineno-21-5" name="__codelineno-21-5"></a>response    HttpServletResponse
-<a href="#__codelineno-21-6" id="__codelineno-21-6" name="__codelineno-21-6"></a>config      ServletConfig
-<a href="#__codelineno-21-7" id="__codelineno-21-7" name="__codelineno-21-7"></a>application ServletContext
-<a href="#__codelineno-21-8" id="__codelineno-21-8" name="__codelineno-21-8"></a>session     HttpSession
-<a href="#__codelineno-21-9" id="__codelineno-21-9" name="__codelineno-21-9"></a><mark class="critic">pageContext</mark> PageContext
-<a href="#__codelineno-21-10" id="__codelineno-21-10" name="__codelineno-21-10"></a><mark class="critic">page</mark>        Object
-<a href="#__codelineno-21-11" id="__codelineno-21-11" name="__codelineno-21-11"></a>exception   Throwable
-</code></pre></div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<ul>
-<li>config的web.xml配置稍有不同: <code>&lt;jsp-file&gt;</code> 替代<code>&lt;servlet-class&gt;</code></li>
-</ul>
-</div>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-22-1" id="__codelineno-22-1" name="__codelineno-22-1"></a>pageContext:
-<a href="#__codelineno-22-2" id="__codelineno-22-2" name="__codelineno-22-2"></a>    - pageContext.xxxAttribute("&lt;属性名&gt;", &lt;属性值&gt;, PageContext.XXX_SCOPE)
-<a href="#__codelineno-22-3" id="__codelineno-22-3" name="__codelineno-22-3"></a>    - XXX 表示 PAGE(默认)/REQUEST/SESSION/APPLICATION
-<a href="#__codelineno-22-4" id="__codelineno-22-4" name="__codelineno-22-4"></a>    - 即pageContext可以管理四个作用域的属性
-<a href="#__codelineno-22-5" id="__codelineno-22-5" name="__codelineno-22-5"></a>page:
-<a href="#__codelineno-22-6" id="__codelineno-22-6" name="__codelineno-22-6"></a>    - 定义: `Object page=this;`
-<a href="#__codelineno-22-7" id="__codelineno-22-7" name="__codelineno-22-7"></a>exception:
-<a href="#__codelineno-22-8" id="__codelineno-22-8" name="__codelineno-22-8"></a>    - getMessage()
-<a href="#__codelineno-22-9" id="__codelineno-22-9" name="__codelineno-22-9"></a>    - 引入: `&lt;%@ page isErrorPage="true" %&gt;`
-</code></pre></div>
-<h2 id="3_1">3.指令元素</h2>
-<div class="highlight"><span class="filename">指令元素</span><pre><span></span><code><a href="#__codelineno-23-1" id="__codelineno-23-1" name="__codelineno-23-1"></a>page:
-<a href="#__codelineno-23-2" id="__codelineno-23-2" name="__codelineno-23-2"></a>    - 定义
-<a href="#__codelineno-23-3" id="__codelineno-23-3" name="__codelineno-23-3"></a>    - &lt;%@ page 属性名="属性值" %&gt;
-<a href="#__codelineno-23-4" id="__codelineno-23-4" name="__codelineno-23-4"></a>    - 常用属性: contentType, extends, language, <mark class="critic">errorPage</mark>, isErrorPage, isELIgnored
-<a href="#__codelineno-23-5" id="__codelineno-23-5" name="__codelineno-23-5"></a>include:
-<a href="#__codelineno-23-6" id="__codelineno-23-6" name="__codelineno-23-6"></a>    - 静态引入任何资源
-<a href="#__codelineno-23-7" id="__codelineno-23-7" name="__codelineno-23-7"></a>    - &lt;%@ include file="资源名" %&gt;
-<a href="#__codelineno-23-8" id="__codelineno-23-8" name="__codelineno-23-8"></a>taglib:
-<a href="#__codelineno-23-9" id="__codelineno-23-9" name="__codelineno-23-9"></a>    - 引入标签库
-<a href="#__codelineno-23-10" id="__codelineno-23-10" name="__codelineno-23-10"></a>    - &lt;%@ taglib uri="" prefix="" %&gt;
-<a href="#__codelineno-23-11" id="__codelineno-23-11" name="__codelineno-23-11"></a>    - 如: 引入 JSTL, 自定义标签
-</code></pre></div>
-<h2 id="4">4.异常</h2>
-<div class="highlight"><span class="filename">异常工作</span><pre><span></span><code><a href="#__codelineno-24-1" id="__codelineno-24-1" name="__codelineno-24-1"></a>web.xml:
-<a href="#__codelineno-24-2" id="__codelineno-24-2" name="__codelineno-24-2"></a>    &lt;error-page&gt;
-<a href="#__codelineno-24-3" id="__codelineno-24-3" name="__codelineno-24-3"></a>        &lt;exception-type&gt;转发的异常类(如: java.lang.Exception)&lt;/exception-type&gt;
-<a href="#__codelineno-24-4" id="__codelineno-24-4" name="__codelineno-24-4"></a>        &lt;location&gt;/显示错误页.jsp&lt;/location&gt;
-<a href="#__codelineno-24-5" id="__codelineno-24-5" name="__codelineno-24-5"></a>    &lt;/error-page&gt;
-<a href="#__codelineno-24-6" id="__codelineno-24-6" name="__codelineno-24-6"></a>显示错误页.jsp:
-<a href="#__codelineno-24-7" id="__codelineno-24-7" name="__codelineno-24-7"></a>    - &lt;%@ page isErrorPage="true" %&gt;
-<a href="#__codelineno-24-8" id="__codelineno-24-8" name="__codelineno-24-8"></a>引发错误页.jsp:
-<a href="#__codelineno-24-9" id="__codelineno-24-9" name="__codelineno-24-9"></a>    - &lt;%@ page errorPage="需要转发的错误页" %&gt;
-</code></pre></div>
-<h2 id="5action">5.Action元素</h2>
-<p>每个 JSP action标记都用于执行某些特定任务 (实际上 指令元素+脚本元素+隐式对象 就能实现大部分功能)</p>
-<p>可用于控制 JavaBean</p>
-<div class="highlight"><span class="filename">Action元素</span><pre><span></span><code><a href="#__codelineno-25-1" id="__codelineno-25-1" name="__codelineno-25-1"></a>jsp:include - 包含另一个资源
-<a href="#__codelineno-25-2" id="__codelineno-25-2" name="__codelineno-25-2"></a>jsp:forward - 将请求和响应转发到另一个资源
-<a href="#__codelineno-25-3" id="__codelineno-25-3" name="__codelineno-25-3"></a>jsp:param - 设置参数值, 主要用于 forword 或 include
-<a href="#__codelineno-25-4" id="__codelineno-25-4" name="__codelineno-25-4"></a>
-<a href="#__codelineno-25-5" id="__codelineno-25-5" name="__codelineno-25-5"></a>jsp:useBean - 创建或定位 Bean 对象
-<a href="#__codelineno-25-6" id="__codelineno-25-6" name="__codelineno-25-6"></a>jsp:setProperty - 设置 Bean 对象的属性值
-<a href="#__codelineno-25-7" id="__codelineno-25-7" name="__codelineno-25-7"></a>jsp:getProperty - 获取 Bean 对象的属性值
-<a href="#__codelineno-25-8" id="__codelineno-25-8" name="__codelineno-25-8"></a>
-<a href="#__codelineno-25-9" id="__codelineno-25-9" name="__codelineno-25-9"></a>jsp:plugin - 嵌入另一个component, 如applet
-<a href="#__codelineno-25-10" id="__codelineno-25-10" name="__codelineno-25-10"></a>jsp:fallback - 用于在plugin正常工作时打印消息
-</code></pre></div>
-<h2 id="6el">6.EL</h2>
-<h2 id="7jstl">7.JSTL</h2>
 </article>
 </div>
 </div>
@@ -881,7 +656,7 @@
 </main>
 <footer class="md-footer">
 <nav aria-label="页脚" class="md-footer__inner md-grid">
-<a aria-label="上一页: Linux" class="md-footer__link md-footer__link--prev" href="../../linux/linux/" rel="prev">
+<a aria-label="上一页: Index" class="md-footer__link md-footer__link--prev" href="../" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -890,8 +665,21 @@
 <span class="md-footer__direction">
                   上一页
                 </span>
-                Linux
+                Index
               </div>
+</div>
+</a>
+<a aria-label="下一页: Jsp" class="md-footer__link md-footer__link--next" href="../jsp/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                  下一页
+                </span>
+                Jsp
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
 </div>
 </a>
 </nav>
