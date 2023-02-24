@@ -5,11 +5,10 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../" rel="prev"/>
-<link href="../jsp/" rel="next"/>
+<link href="../jsp/" rel="prev"/>
 <link href="https://pic.peo.pw/a/2023/01/12/63bfb934b1b06.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.0.3" name="generator"/>
-<title>Servlet - 复习</title>
+<title>大纲 - 复习</title>
 <link href="../../assets/stylesheets/main.6b71719e.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h224V368c0-26.5 21.5-48 48-48h112V96c0-35.3-28.7-64-64-64H64zm384 320H336c-8.8 0-16 7.2-16 16v112l32-32 64-64 32-32z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M96 0C43 0 0 43 0 96v320c0 53 43 96 96 96h320c17.7 0 32-14.3 32-32s-14.3-32-32-32v-64c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H96zm0 384h256v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-40-176h24v-64h-24c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-80c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-144c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M480 32c0-12.9-7.8-24.6-19.8-29.6S434.5.2 425.3 9.3L381.7 53c-48 48-113.1 75-181 75H64c-35.3 0-64 28.7-64 64v96c0 35.3 28.7 64 64 64v128c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V352h8.7c67.9 0 133 27 181 75l43.6 43.6c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V300.4c18.6-8.8 32-32.5 32-60.4s-13.4-51.6-32-60.4V32zm-64 76.7v262.6C357.2 317.8 280.5 288 200.7 288H192v-96h8.7c79.8 0 156.5-29.8 215.3-83.3z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-86.2-346.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1 0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6-13.3 0-24-10.7-24-24v-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1 0-8.4-6.8-15.1-15.1-15.1h-58.3c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM288 352c0 17.7-14.3 32-32 32s-32-14.3-32-32 14.3-32 32-32 32 14.3 32 32z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.1 52.4 442.6 6.5c-1.9-3.9-6.1-6.5-10.5-6.5s-8.5 2.6-10.4 6.5l-16.5 45.9-46 16.8c-4.3 1.6-7.3 5.9-7.2 10.4 0 4.5 3 8.7 7.2 10.2l45.7 16.8 16.8 45.8c1.5 4.4 5.8 7.5 10.4 7.5s8.9-3.1 10.4-7.5l16.5-45.8 45.7-16.8c4.2-1.5 7.2-5.7 7.2-10.2 0-4.6-3-8.9-7.2-10.4l-45.6-16.8zm-132.4 53c-12.5-12.5-32.8-12.5-45.3 0l-2.9 2.9c-22-8-45.8-12.3-70.5-12.3C93.1 96 0 189.1 0 304s93.1 208 208 208 208-93.1 208-208c0-24.7-4.3-48.5-12.2-70.5l2.9-2.9c12.5-12.5 12.5-32.8 0-45.3l-80-80zM200 192c-57.4 0-104 46.6-104 104v8c0 8.8-7.2 16-16 16s-16-7.2-16-16v-8c0-75.1 60.9-136 136-136h8c8.8 0 16 7.2 16 16s-7.2 16-16 16h-8z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 398.9c58.5-41.1 96-104.1 96-174.9C512 100.3 397.4 0 256 0S0 100.3 0 224c0 70.7 37.5 133.8 96 174.9V464c0 26.5 21.5 48 48 48h48v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h64v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h48c26.5 0 48-21.5 48-48v-65.1zM224 256c0 35.3-28.7 64-64 64s-64-28.7-64-64 28.7-64 64-64 64 28.7 64 64zm128 64c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M320 0c17.7 0 32 14.3 32 32v64h128c35.3 0 64 28.7 64 64v288c0 35.3-28.7 64-64 64H160c-35.3 0-64-28.7-64-64V160c0-35.3 28.7-64 64-64h128V32c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zM264 256c0-22.1-17.9-40-40-40s-40 17.9-40 40 17.9 40 40 40 40-17.9 40-40zm152 40c22.1 0 40-17.9 40-40s-17.9-40-40-40-40 17.9-40 40 17.9 40 40 40zM48 224h16v192H48c-26.5 0-48-21.5-48-48v-96c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48h-16V224h16z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M288 0H128c-17.7 0-32 14.3-32 32s14.3 32 32 32v132.8c0 11.8-3.3 23.5-9.5 33.5L10.3 406.2C3.6 417.2 0 429.7 0 442.6 0 480.9 31.1 512 69.4 512h309.2c38.3 0 69.4-31.1 69.4-69.4 0-12.8-3.6-25.4-10.3-36.4L329.5 230.4c-6.2-10.1-9.5-21.7-9.5-33.5V64c17.7 0 32-14.3 32-32S337.7 0 320 0h-32zm-96 196.8V64h64v132.8c0 23.7 6.6 46.9 19 67.1l34.5 56.1h-171l34.5-56.1c12.4-20.2 19-43.4 19-67.1z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64h-64c-35.3 0-64-28.7-64-64V216z"/></svg>');}</style>
@@ -36,7 +35,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#1servlet-genericservlet-httpservlet">
+<a class="md-skip" href="#1">
           跳转至
         </a>
 </div>
@@ -60,7 +59,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Servlet
+              大纲
             
           </span>
 </div>
@@ -233,14 +232,24 @@
           web
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../servlet/">
+        Servlet
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../jsp/">
+        Jsp
+      </a>
+</li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
-          Servlet
+          大纲
           <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
-        Servlet
+        大纲
       </a>
 <nav aria-label="目录" class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">
@@ -249,76 +258,133 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#1servlet-genericservlet-httpservlet">
-    1.Servlet, GenericServlet, HttpServlet
+<a class="md-nav__link" href="#1">
+    1.简答题
   </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#2servletrequest-servletresponse">
-    2.ServletRequest, ServletResponse
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#3">
-    3.转发
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#4servietconfig">
-    4.ServIetConfig
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#5servletcontext">
-    5.ServletContext
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#6session">
-    6.session跟踪/管理
-  </a>
-<nav aria-label="6.session跟踪/管理" class="md-nav">
+<nav aria-label="1.简答题" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#1cookie">
-    1.Cookie
+<a class="md-nav__link" href="#1web">
+    1.Web系统的三项基础技术
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#2httpsession">
-    2.HttpSession
+<a class="md-nav__link" href="#2bs">
+    2.B/S的定义，特点
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3html5">
+    3.HTML5的基本构成
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4formgetpost">
+    4.form中，get&amp;post的区别
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5servlet">
+    5.Servlet的生命周期
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6">
+    6.会话对象存入、读取和删除信息
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7web">
+    7.Web保存信息的两种主要方式 &amp; 异同
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8servlet-jsp">
+    8.Servlet &amp; JSP的联系 &amp; 区别
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#9jsp">
+    9.JSP的常用隐含对象
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#10mvc">
+    10.MVC的 组成 &amp;&amp; 职责
   </a>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#7eventlistener">
-    7.Event&amp;Listener
+<a class="md-nav__link" href="#2">
+    2.综合题
+  </a>
+<nav aria-label="2.综合题" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1guessnumber">
+    1.GuessNumber
+  </a>
+<nav aria-label="1.GuessNumber" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1servlet">
+    1.Servlet获取请求中用户提交的数据
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#8filter-filterchain-filterconfig">
-    8.Filter, FilterChain, FilterConfig
+<a class="md-nav__link" href="#2session">
+    2.session的创建 &amp;&amp; 存入/读取/移除信息
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#9crud">
-    9.CRUD
+<a class="md-nav__link" href="#3el">
+    3.EL表达式显示 参数 | 属性
   </a>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../jsp/">
-        Jsp
-      </a>
+<a class="md-nav__link" href="#2messagebroad">
+    2.MessageBroad
+  </a>
+<nav aria-label="2.MessageBroad" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1_1">
+    1.常用表单标签的使用
+  </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../%E5%A4%A7%E7%BA%B2/">
-        大纲
-      </a>
+<a class="md-nav__link" href="#2javabean">
+    2.数据模型Javabean类的编写
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3jstl-cforeach">
+    3.JSTL 的 c:foreach
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4business">
+    4.业务模型(Business类)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5dao">
+    5.数据访问层DAO
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -338,63 +404,130 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#1servlet-genericservlet-httpservlet">
-    1.Servlet, GenericServlet, HttpServlet
+<a class="md-nav__link" href="#1">
+    1.简答题
   </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#2servletrequest-servletresponse">
-    2.ServletRequest, ServletResponse
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#3">
-    3.转发
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#4servietconfig">
-    4.ServIetConfig
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#5servletcontext">
-    5.ServletContext
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#6session">
-    6.session跟踪/管理
-  </a>
-<nav aria-label="6.session跟踪/管理" class="md-nav">
+<nav aria-label="1.简答题" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#1cookie">
-    1.Cookie
+<a class="md-nav__link" href="#1web">
+    1.Web系统的三项基础技术
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#2httpsession">
-    2.HttpSession
+<a class="md-nav__link" href="#2bs">
+    2.B/S的定义，特点
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3html5">
+    3.HTML5的基本构成
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4formgetpost">
+    4.form中，get&amp;post的区别
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5servlet">
+    5.Servlet的生命周期
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6">
+    6.会话对象存入、读取和删除信息
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7web">
+    7.Web保存信息的两种主要方式 &amp; 异同
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8servlet-jsp">
+    8.Servlet &amp; JSP的联系 &amp; 区别
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#9jsp">
+    9.JSP的常用隐含对象
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#10mvc">
+    10.MVC的 组成 &amp;&amp; 职责
   </a>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#7eventlistener">
-    7.Event&amp;Listener
+<a class="md-nav__link" href="#2">
+    2.综合题
+  </a>
+<nav aria-label="2.综合题" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1guessnumber">
+    1.GuessNumber
+  </a>
+<nav aria-label="1.GuessNumber" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1servlet">
+    1.Servlet获取请求中用户提交的数据
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#8filter-filterchain-filterconfig">
-    8.Filter, FilterChain, FilterConfig
+<a class="md-nav__link" href="#2session">
+    2.session的创建 &amp;&amp; 存入/读取/移除信息
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#9crud">
-    9.CRUD
+<a class="md-nav__link" href="#3el">
+    3.EL表达式显示 参数 | 属性
   </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2messagebroad">
+    2.MessageBroad
+  </a>
+<nav aria-label="2.MessageBroad" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1_1">
+    1.常用表单标签的使用
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2javabean">
+    2.数据模型Javabean类的编写
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3jstl-cforeach">
+    3.JSTL 的 c:foreach
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4business">
+    4.业务模型(Business类)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5dao">
+    5.数据访问层DAO
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -403,253 +536,180 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1>Servlet</h1>
-<ul>
-<li>Servlet -&gt; GenericServlet -&gt; HttpServlet</li>
-<li>(Xxx)ServletRequest, (Xxx)ServletResponse -&gt; RequestDispatcher</li>
-<li>ServletConfig, ServletContext</li>
-<li>Filter, FilterConfig, FilterChain</li>
-<li>event, listener</li>
-<li>HttpSession; Cookie</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th align="center">对象</th>
-<th align="center">作用域</th>
-<th align="center">参数</th>
-<th align="center">属性</th>
-<th align="center">获取</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">ServletContext</td>
-<td align="center">application</td>
-<td align="center">init</td>
-<td align="center">y</td>
-<td align="center">getServletContext()</td>
-</tr>
-<tr>
-<td align="center">HttpSession</td>
-<td align="center">session</td>
-<td align="center"></td>
-<td align="center">y</td>
-<td align="center"><code>&lt;request&gt;.getSession()</code></td>
-</tr>
-<tr>
-<td align="center">HttpServletRequest</td>
-<td align="center">request</td>
-<td align="center">请求</td>
-<td align="center">y</td>
-<td align="center">自然存在</td>
-</tr>
-<tr>
-<td align="center">HttpCookie</td>
-<td align="center">浏览器缓存</td>
-<td align="center"></td>
-<td align="center">y</td>
-<td align="center"><code>&lt;request&gt;.getCookies()</code> / Cookie()</td>
-</tr>
-<tr>
-<td align="center">Servletconfig</td>
-<td align="center">app/servlet?</td>
-<td align="center">init</td>
-<td align="center">n</td>
-<td align="center">getServletConfig()</td>
-</tr>
-<tr>
-<td align="center">FilterConfig</td>
-<td align="center">app</td>
-<td align="center">init</td>
-<td align="center">n</td>
-<td align="center">Filter.init(-)的参数中</td>
-</tr>
-</tbody>
-</table>
-<h2 id="1servlet-genericservlet-httpservlet">1.Servlet, GenericServlet, HttpServlet</h2>
-<div class="highlight"><span class="filename">Servlet 接口方法</span><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><mark class="critic">
-<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>init(&lt;ServletConfig&gt;)
-<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>service(&lt;ServletRequest&gt;, &lt;ServletResponse&gt;)
-<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>destroy()
-<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a></mark>
-<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a>
-<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><mark class="critic">getServletConfig()</mark> ServletConfig
-<a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a><mark class="critic">getServletInfo()</mark> String
+<h1>大纲</h1>
+<p>Web程序设计复习提纲
+考试题型：
+选择题（15<em>2分）
+简答题（5</em>6分）
+综合应用题（40分）</p>
+<h2 id="1">1.简答题</h2>
+<h3 id="1web">1.Web系统的三项基础技术</h3>
+<div class="highlight"><pre><span></span><code>- Html, css, js？
+- http，url，html？
 </code></pre></div>
-<div class="highlight"><span class="filename">GenericServlet 方法</span><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>// GenericServlet &lt;- Servlet
-<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>service(&lt;ServletRequest&gt;, &lt;ServletResponse&gt;) - 抽象方法
-<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a>
-<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a>init()
-<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a><mark class="critic">getServletContext()</mark> ServletContext
-<a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a><mark class="critic">getInitParameter(&lt;str&gt;)</mark> String
-<a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a>getInitParameters() Enumeration
-<a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a><mark class="critic">getServletName()</mark> String
-<a href="#__codelineno-1-9" id="__codelineno-1-9" name="__codelineno-1-9"></a>log(&lt;消息&gt;[, &lt;Throwable&gt;])
+<h3 id="2bs">2.B/S的定义，特点</h3>
+<div class="highlight"><pre><span></span><code>- B/S架构就是浏览器服务器结构
+- 特点：不需要安装客户端，可直接运行在web浏览器；
 </code></pre></div>
-<div class="highlight"><span class="filename">HttpServIet 方法</span><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>// HttpServIet &lt;= GenericServlet
-<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a>service(&lt;ServletRequest&gt;, &lt;ServletResponse&gt;)
-<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a>service(-, -)
-<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a><mark class="critic">doGet(-, -)</mark>
-<a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a><mark class="critic">doPost(-, -)</mark>
-<a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a>doHead(-, -)
-<a href="#__codelineno-2-7" id="__codelineno-2-7" name="__codelineno-2-7"></a>doOptions(-, -)
-<a href="#__codelineno-2-8" id="__codelineno-2-8" name="__codelineno-2-8"></a>doPut(-, -)
-<a href="#__codelineno-2-9" id="__codelineno-2-9" name="__codelineno-2-9"></a>doTrace(-, -)
-<a href="#__codelineno-2-10" id="__codelineno-2-10" name="__codelineno-2-10"></a>doDelete(-, -)
-<a href="#__codelineno-2-11" id="__codelineno-2-11" name="__codelineno-2-11"></a>getLastModified(-) long
-<a href="#__codelineno-2-12" id="__codelineno-2-12" name="__codelineno-2-12"></a>// - 代表 &lt;HttpServletRequest&gt; 或 &lt;HttpServletResponse&gt;
+<h3 id="3html5">3.HTML5的基本构成</h3>
+<div class="highlight"><pre><span></span><code>- 文档类型声明&lt;!DOCTYPE html&gt;
+- &lt;html&gt;：&lt;head&gt;，&lt;body&gt;
 </code></pre></div>
-<p>可获得的信息:
-    - servlet名&amp;信息, <mark class="critic">config, context, 初始化参数</mark>, 打印日志, 上一次修改时间</p>
-<h2 id="2servletrequest-servletresponse">2.ServletRequest, ServletResponse</h2>
-<div class="highlight"><span class="filename">1.ServletRequest 接口方法</span><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><mark class="critic">getParameter(-)</mark> String
-<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a>getParameterValues(-) String[]
-<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a>getParameterNames() Enumeration
-<a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a>getContentLength() int
-<a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a>getContentType() String
-<a href="#__codelineno-3-6" id="__codelineno-3-6" name="__codelineno-3-6"></a>getCharacterEncoding() String
-<a href="#__codelineno-3-7" id="__codelineno-3-7" name="__codelineno-3-7"></a><mark class="critic">getInputStream()</mark> ServletInputStream
-<a href="#__codelineno-3-8" id="__codelineno-3-8" name="__codelineno-3-8"></a>getServerName() String - 抽象方法
-<a href="#__codelineno-3-9" id="__codelineno-3-9" name="__codelineno-3-9"></a>getServerPort() int
-<a href="#__codelineno-3-10" id="__codelineno-3-10" name="__codelineno-3-10"></a><mark class="critic">getRequestDispatcher(&lt;资源url&gt;)</mark> RequestDispatcher
-<a href="#__codelineno-3-11" id="__codelineno-3-11" name="__codelineno-3-11"></a>
-<a href="#__codelineno-3-12" id="__codelineno-3-12" name="__codelineno-3-12"></a>getSession([-]) - HttpSession
-<a href="#__codelineno-3-13" id="__codelineno-3-13" name="__codelineno-3-13"></a>setAttribute(-, -)
-<a href="#__codelineno-3-14" id="__codelineno-3-14" name="__codelineno-3-14"></a>getAttribute(-) Object
-<a href="#__codelineno-3-15" id="__codelineno-3-15" name="__codelineno-3-15"></a>removeAttribute(-)
+<h3 id="4formgetpost">4.form中，get&amp;post的区别</h3>
+<div class="highlight"><pre><span></span><code>- get只能发送有限数量的数据，因为数据是在header中发送的; post由于数据是在 body 中发送的，因此可以发送 大量数据
+- get比Post更高效，使用得多; get比Post更高效，使用更多
+- get可以添加书签; post可添加书签
+- get是幂等的, 这意味着第二个请求将被忽略，直到第一个请求的响应被传递; post是非幂等的
+- 不安全，因为数据暴露在 URL 栏中; post请求是安全的，因为数据不会在 URL 栏中公开
 </code></pre></div>
-<p>可获得的信息:
-    - <strong>request参数map</strong>, 内容长度&amp;<strong>类型</strong>, 字符集, <strong>输入流</strong>, 主机名&amp;端口, <strong>RequestDispatcher</strong>
-    - <strong>HttpSession</strong>, <strong>set/get/remove属性</strong></p>
-<div class="highlight"><span class="filename">2.ServletResponse 接口方法</span><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>sendRedirect(&lt;str&gt;) - 重定向
+<h3 id="5servlet">5.Servlet的生命周期</h3>
+<div class="highlight"><pre><span></span><code>```
+1.  加载Servlet类 - web容器收到Servlet第一个请求时, classloader将负责加载Servlet类
+2.  创建Servlet实例 - 在加载Servlet类后执行(只创建一次) - 进入new状态
+3.  调用init(-)方法 - 在创建Servlet实例后执行(只调用一次) - 进入ready状态
+4.  调用service(-,-)方法 - 每次收到Servlet请求时调用
+5.  调用destroy()方法 - web容器在服务中删除Servlet实例之前会调用destroy(显然只调用一次) - 进入end状态
+```
 </code></pre></div>
-<h2 id="3">3.转发</h2>
-<div class="highlight"><span class="filename">1.RequestDispacher</span><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>获取 RequestDispacher:
-<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a>    - &lt;ServletRequest&gt;.getRequestDispatcher(&lt;资源url&gt;)
-<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a>RequestDispacher 方法:
-<a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a>    - forward(-, -) - 保留request, 抛弃response; 可回溯; 运行在服务端
-<a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a>    - include(-, -) - 保留request&amp;response; 可回溯; 运行在服务端
+<h3 id="6">6.会话对象存入、读取和删除信息</h3>
+<div class="highlight"><pre><span></span><code>- setAttribute("&lt;key&gt;", &lt;Object&gt;), getAttribute("&lt;key&gt;"), removeAttribute("&lt;key&gt;")
 </code></pre></div>
-<div class="highlight"><span class="filename">2.sendRedirect(-)</span><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>&lt;ServletResponse&gt;.sendRedirect(-):
-<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a>    - 抛弃request&amp;response？重新发送请求; 运行在客户端
+<h3 id="7web">7.Web保存信息的两种主要方式 &amp; 异同</h3>
+<div class="highlight"><pre><span></span><code>```
+主要方式 - 参数, 属性
+相同点:
+    - 都能在一定的作用域内保存数据
+    - 
+不同点:
+    - 参数值只能是String, 而属性值可以是任何对象(Object)
+    - 获取方式不同:
+        - 如: 请求参数值通过form表单提供, 初始化参数值通过web部署描述符web.xml配置
+        - 而属性值通过 setAttribute(-,-) 设置
+    - 划分方式不同:
+        - 参数划分为: 初始化参数, 请求参数
+        - 属性可以按不同作用域划分: page, request, session, application
+```
+
+??? deprecated
+        - Cookie，Session
+        - 前者在服务端创建，在浏览器保存，为多个浏览器共享，安全性较差；可动态调整生命周期
+        - 后者在服务端创建和保存，安全性较强；生命周期默认为30min
 </code></pre></div>
-<h2 id="4servietconfig">4.ServIetConfig</h2>
-<div class="highlight"><span class="filename">ServIetConfig</span><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>获取:
-<a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a>    - &lt;Servlet&gt;.getServletConfig()
-<a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a>方法:
-<a href="#__codelineno-7-4" id="__codelineno-7-4" name="__codelineno-7-4"></a>    - getInitParameter(-) String
-<a href="#__codelineno-7-5" id="__codelineno-7-5" name="__codelineno-7-5"></a>    - getInitParameterNames() Enumeration
-<a href="#__codelineno-7-6" id="__codelineno-7-6" name="__codelineno-7-6"></a>    - getServletName() String
-<a href="#__codelineno-7-7" id="__codelineno-7-7" name="__codelineno-7-7"></a>    - getServletContext() ServletContext
-<a href="#__codelineno-7-8" id="__codelineno-7-8" name="__codelineno-7-8"></a>配置:
-<a href="#__codelineno-7-9" id="__codelineno-7-9" name="__codelineno-7-9"></a>    - servlet初始化参数map:
-<a href="#__codelineno-7-10" id="__codelineno-7-10" name="__codelineno-7-10"></a>        - &lt;servlet&gt; -&gt; &lt;init-param&gt; -&gt; &lt;param-name&gt;, &lt;param-value&gt;
+<h3 id="8servlet-jsp">8.Servlet &amp; JSP的联系 &amp; 区别</h3>
+<div class="highlight"><pre><span></span><code>```
+联系:
+    - jsp会被 jsp translator 翻译成 Servlet.java 文件
+    - jsp是Servlet的扩展, 即jsp的本质是Servlet
+区别:
+    - Servlet适合处理业务逻辑, 而jsp适合处理表示逻辑
+    - Servlet由java代码构成, 而jsp由 html, jsp标签, EL表达式, JSTL等元素构成
+    - Servlet相较于jsp运行速度更快, 因为jsp需要先翻译成Servlet.java再编译 (运行速度)
+    - Servlet必须编译后才能执行 / Servlet放入web容器之前必须编译 ？ (编译顺序)
+```
 </code></pre></div>
-<ul>
-<li>可获得的信息: <strong>servlet初始化参数map</strong>, servlet名, <strong>ServletContext</strong></li>
-</ul>
-<h2 id="5servletcontext">5.ServletContext</h2>
-<div class="highlight"><span class="filename">ServletContext</span><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>获取:
-<a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a>    - &lt;GenericServlet&gt;.getServletContext()
-<a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a>    - &lt;Servlet&gt;.getServletConfig().getServletContext()
-<a href="#__codelineno-8-4" id="__codelineno-8-4" name="__codelineno-8-4"></a>方法:
-<a href="#__codelineno-8-5" id="__codelineno-8-5" name="__codelineno-8-5"></a>    - getInitParameter(-) String
-<a href="#__codelineno-8-6" id="__codelineno-8-6" name="__codelineno-8-6"></a>    - getInitParameterNames() Enumeration
-<a href="#__codelineno-8-7" id="__codelineno-8-7" name="__codelineno-8-7"></a>    - setAttribute(-, -)
-<a href="#__codelineno-8-8" id="__codelineno-8-8" name="__codelineno-8-8"></a>    - getAttribute(-) Object
-<a href="#__codelineno-8-9" id="__codelineno-8-9" name="__codelineno-8-9"></a>    - removeAttribute(-)
-<a href="#__codelineno-8-10" id="__codelineno-8-10" name="__codelineno-8-10"></a>配置:
-<a href="#__codelineno-8-11" id="__codelineno-8-11" name="__codelineno-8-11"></a>    - Context初始化参数:
-<a href="#__codelineno-8-12" id="__codelineno-8-12" name="__codelineno-8-12"></a>        - &lt;context-param&gt; -&gt; &lt;param-name&gt;, &lt;param-value&gt;
+<h3 id="9jsp">9.JSP的常用隐含对象</h3>
+<div class="highlight"><pre><span></span><code>- application, session, request, response, pageContext, page
+- out, config, exception
 </code></pre></div>
-<ul>
-<li>可获得的信息: <strong>context初始化参数map</strong>, <strong>set/get/remove属性</strong></li>
-</ul>
-<h2 id="6session">6.session跟踪/管理</h2>
-<h3 id="1cookie">1.Cookie</h3>
-<p>Cookie 理论上是一个 JavaBean</p>
-<div class="highlight"><span class="filename">Cookie</span><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a>获取:
-<a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a>    - Cookie(-, -) - 构造方法
-<a href="#__codelineno-9-3" id="__codelineno-9-3" name="__codelineno-9-3"></a>方法:
-<a href="#__codelineno-9-4" id="__codelineno-9-4" name="__codelineno-9-4"></a>    - setMaxAge(-) - 可用于销毁/注销cookie
-<a href="#__codelineno-9-5" id="__codelineno-9-5" name="__codelineno-9-5"></a>    - name &amp; value 的 getter/setter
-<a href="#__codelineno-9-6" id="__codelineno-9-6" name="__codelineno-9-6"></a>相关方法:
-<a href="#__codelineno-9-7" id="__codelineno-9-7" name="__codelineno-9-7"></a>    - &lt;HttpServletResponse&gt;.addCookie(&lt;Cookie&gt;)
-<a href="#__codelineno-9-8" id="__codelineno-9-8" name="__codelineno-9-8"></a>    - &lt;HttpServletRequest&gt;.getCookies() Cookie[]
-<a href="#__codelineno-9-9" id="__codelineno-9-9" name="__codelineno-9-9"></a>应用:
-<a href="#__codelineno-9-10" id="__codelineno-9-10" name="__codelineno-9-10"></a>    - 获取客户端的cookie - &lt;Request&gt;.getCookies()
-<a href="#__codelineno-9-11" id="__codelineno-9-11" name="__codelineno-9-11"></a>    - 发送cookie给客户端 - &lt;response&gt;.addCookie(new Cookie(&lt;cookie名&gt;, &lt;cookie值&gt;))
-<a href="#__codelineno-9-12" id="__codelineno-9-12" name="__codelineno-9-12"></a>    - 删除客户端的cookie:
-<a href="#__codelineno-9-13" id="__codelineno-9-13" name="__codelineno-9-13"></a>        Cookie ck=new Cookie("&lt;Cookie名&gt;", "");
-<a href="#__codelineno-9-14" id="__codelineno-9-14" name="__codelineno-9-14"></a>        ck.setMaxAge(0);
-<a href="#__codelineno-9-15" id="__codelineno-9-15" name="__codelineno-9-15"></a>        response.addCookie(ck);
-<a href="#__codelineno-9-16" id="__codelineno-9-16" name="__codelineno-9-16"></a>作用域: 浏览器缓存时 一直存在
+<h3 id="10mvc">10.MVC的 组成 &amp;&amp; 职责</h3>
+<div class="highlight"><pre><span></span><code>- View，controller，model (是一种将业务逻辑、表示逻辑和数据分开的设计模式)
+- View：负责视图逻辑, 表示页面呈现出来的效果
+- controller: 负责业务逻辑, 充当视图和模型之间的接口; 拦截所有传入的请求
+- model: 负责存储数据, 表示应用程序的状态 (它还可以具有业务逻辑)
 </code></pre></div>
-<h3 id="2httpsession">2.HttpSession</h3>
-<div class="highlight"><span class="filename">HttpSession</span><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a>获取:
-<a href="#__codelineno-10-2" id="__codelineno-10-2" name="__codelineno-10-2"></a>    - &lt;HttpServletRequest&gt;.getSession([-])
-<a href="#__codelineno-10-3" id="__codelineno-10-3" name="__codelineno-10-3"></a>方法:
-<a href="#__codelineno-10-4" id="__codelineno-10-4" name="__codelineno-10-4"></a>    - getId() String
-<a href="#__codelineno-10-5" id="__codelineno-10-5" name="__codelineno-10-5"></a>    - getCreationTime() long
-<a href="#__codelineno-10-6" id="__codelineno-10-6" name="__codelineno-10-6"></a>    - getLastAccessedTime() long
-<a href="#__codelineno-10-7" id="__codelineno-10-7" name="__codelineno-10-7"></a>    - invalidate()
-<a href="#__codelineno-10-8" id="__codelineno-10-8" name="__codelineno-10-8"></a>    - (get|set|remove)Attribute(...)
-<a href="#__codelineno-10-9" id="__codelineno-10-9" name="__codelineno-10-9"></a>作用域: 浏览器开启时 一直存在 (指的是 session)
+<h2 id="2">2.综合题</h2>
+<h3 id="1guessnumber">1.GuessNumber</h3>
+<p>课程用示例：GuessNumber与MessageBroad。
+GuessNumber示例主要的考察内容：</p>
+<h4 id="1servlet">1.Servlet获取请求中用户提交的数据</h4>
+<div class="highlight"><pre><span></span><code>- &lt;HttpServletRequest&gt;.getParameterXxx(-) String
 </code></pre></div>
-<h2 id="7eventlistener">7.Event&amp;Listener</h2>
-<div class="highlight"><span class="filename">逻辑事件</span><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a>request:
-<a href="#__codelineno-11-2" id="__codelineno-11-2" name="__codelineno-11-2"></a>    - ServletRequest - 侦听请求的 初始化 / 销毁
-<a href="#__codelineno-11-3" id="__codelineno-11-3" name="__codelineno-11-3"></a>    - ServletRequestAttribute - 侦听请求参数的 添加 / 删除 / 替换
-<a href="#__codelineno-11-4" id="__codelineno-11-4" name="__codelineno-11-4"></a>session:
-<a href="#__codelineno-11-5" id="__codelineno-11-5" name="__codelineno-11-5"></a>    - HttpSession - 创建 / 销毁
-<a href="#__codelineno-11-6" id="__codelineno-11-6" name="__codelineno-11-6"></a>    - HttpSessionAttribute - 参数的 添加 / 删除 / 替换
-<a href="#__codelineno-11-7" id="__codelineno-11-7" name="__codelineno-11-7"></a>    - HttpSessionBinding - 绑定 / 解绑
-<a href="#__codelineno-11-8" id="__codelineno-11-8" name="__codelineno-11-8"></a>    - HttpSessionActivation - 即将钝化 / 即将激活
-<a href="#__codelineno-11-9" id="__codelineno-11-9" name="__codelineno-11-9"></a>context:
-<a href="#__codelineno-11-10" id="__codelineno-11-10" name="__codelineno-11-10"></a>    - ServletContext - 侦听web app 部署 / 关闭
-<a href="#__codelineno-11-11" id="__codelineno-11-11" name="__codelineno-11-11"></a>    - ServletContextAttribute - 参数的 添加 / 删除 / 替换
+<h4 id="2session">2.session的创建 &amp;&amp; 存入/读取/移除信息</h4>
+<div class="highlight"><pre><span></span><code>- &lt;HttpServletRequest&gt;.getSession() HttpSession
+- HttpSession.
+    - setAttribute("&lt;key&gt;", &lt;Object&gt;)
+    - getAttribute("&lt;key&gt;")
+    - removeAttribute("&lt;key&gt;")
 </code></pre></div>
-<div class="highlight"><span class="filename">应用</span><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a>ServletContext - web app 部署时 创建数据库连接
+<h4 id="3el">3.EL表达式显示 参数 | 属性</h4>
+<div class="highlight"><pre><span></span><code>- ${}
+- pageScope
+- requestScope
+- sessionScope
+- applicationScope
+- initParam
+- param
 </code></pre></div>
-<h2 id="8filter-filterchain-filterconfig">8.Filter, FilterChain, FilterConfig</h2>
-<p>筛选器是在请求的 预处理, 处理后 调用的对象, 它主要用于执行过滤任务</p>
-<div class="highlight"><span class="filename">Filter, FilterChain, FilterConfig</span><pre><span></span><code><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a>Filter方法:
-<a href="#__codelineno-13-2" id="__codelineno-13-2" name="__codelineno-13-2"></a>    - init(&lt;FilterConfig&gt;)
-<a href="#__codelineno-13-3" id="__codelineno-13-3" name="__codelineno-13-3"></a>    - doFilter(&lt;HttpServletRequest&gt;, &lt;HttpServletResponse&gt;, &lt;FilterChain&gt;)
-<a href="#__codelineno-13-4" id="__codelineno-13-4" name="__codelineno-13-4"></a>    - destroy()
-<a href="#__codelineno-13-5" id="__codelineno-13-5" name="__codelineno-13-5"></a>FilterChain方法:
-<a href="#__codelineno-13-6" id="__codelineno-13-6" name="__codelineno-13-6"></a>    - doFilter(&lt;HttpServletRequest&gt;, &lt;HttpServletResponse&gt;)
-<a href="#__codelineno-13-7" id="__codelineno-13-7" name="__codelineno-13-7"></a>FilterConfig方法:
-<a href="#__codelineno-13-8" id="__codelineno-13-8" name="__codelineno-13-8"></a>    - init(FilterConfig config)
-<a href="#__codelineno-13-9" id="__codelineno-13-9" name="__codelineno-13-9"></a>    - getServletContext() ServletContext
-<a href="#__codelineno-13-10" id="__codelineno-13-10" name="__codelineno-13-10"></a>    - getInitParameter(-) String
-<a href="#__codelineno-13-11" id="__codelineno-13-11" name="__codelineno-13-11"></a>    - getInitParameters(-) Enumeration
+<h3 id="2messagebroad">2.MessageBroad</h3>
+<p>MessageBroad示例主要的考察内容：</p>
+<h4 id="1_1">1.常用表单标签的使用</h4>
+<div class="highlight"><pre><span></span><code>```
+- &lt;form&gt;
+    - &lt;fieldset&gt; - 对form表单的控件进行分组
+        - &lt;legend&gt; - 标题
+        - &lt;其他form控件&gt;
+
+    - &lt;input type="text"&gt; - 文本框
+    - &lt;input type="password"&gt; - 密码框
+    - &lt;textarea&gt; - 大型文本框
+
+    - &lt;input type="checkbox"&gt; - 复选框
+    - &lt;input type="radio"&gt; - 单选按钮
+    - &lt;select&gt; - 单选框
+        - &lt;option&gt; - 选项
+
+    - &lt;input type="submit"&gt; - 提交按钮
+    - &lt;input type="reset"&gt; - 重置按钮
+    - &lt;input type="button"&gt; - 按钮
+
+    - &lt;input type="hidden"&gt; - 隐藏
+    - &lt;input type="file"&gt; - 文件框
+```
 </code></pre></div>
-<div class="highlight"><span class="filename">filter配置</span><pre><span></span><code><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a>&lt;filter&gt;
-<a href="#__codelineno-14-2" id="__codelineno-14-2" name="__codelineno-14-2"></a>    &lt;filter-name&gt;...&lt;/filter-name&gt;  
-<a href="#__codelineno-14-3" id="__codelineno-14-3" name="__codelineno-14-3"></a>    &lt;filter-class&gt;...&lt;/filter-class&gt;
-<a href="#__codelineno-14-4" id="__codelineno-14-4" name="__codelineno-14-4"></a>
-<a href="#__codelineno-14-5" id="__codelineno-14-5" name="__codelineno-14-5"></a>    &lt;init-param&gt;
-<a href="#__codelineno-14-6" id="__codelineno-14-6" name="__codelineno-14-6"></a>        &lt;param-name&gt;初始化参数名&lt;/param-name&gt;
-<a href="#__codelineno-14-7" id="__codelineno-14-7" name="__codelineno-14-7"></a>        &lt;param-value&gt;初始化参数值&lt;/param-value&gt;
-<a href="#__codelineno-14-8" id="__codelineno-14-8" name="__codelineno-14-8"></a>    &lt;/init-param&gt; 
-<a href="#__codelineno-14-9" id="__codelineno-14-9" name="__codelineno-14-9"></a>&lt;/filter&gt;
-<a href="#__codelineno-14-10" id="__codelineno-14-10" name="__codelineno-14-10"></a>
-<a href="#__codelineno-14-11" id="__codelineno-14-11" name="__codelineno-14-11"></a>&lt;filter-mapping&gt;  
-<a href="#__codelineno-14-12" id="__codelineno-14-12" name="__codelineno-14-12"></a>    &lt;filter-name&gt;...&lt;/filter-name&gt;  
-<a href="#__codelineno-14-13" id="__codelineno-14-13" name="__codelineno-14-13"></a>    &lt;url-pattern&gt;...&lt;/url-pattern&gt;  
-<a href="#__codelineno-14-14" id="__codelineno-14-14" name="__codelineno-14-14"></a>&lt;/filter-mapping&gt;
+<h4 id="2javabean">2.数据模型Javabean类的编写</h4>
+<div class="highlight"><pre><span></span><code>- 创建web的数据库和对应的表，设计字段
+- 创建bean包和对应的类，使得特定的类的字段和特定表的字段一一映射，以及定义getter/setter
 </code></pre></div>
-<h2 id="9crud">9.CRUD</h2>
-<div class="highlight"><span class="filename">CRUD</span><pre><span></span><code><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a>数据库api的.jar包
-<a href="#__codelineno-15-2" id="__codelineno-15-2" name="__codelineno-15-2"></a>    - 如: mysql-connector-java-8.0.29.jar
-<a href="#__codelineno-15-3" id="__codelineno-15-3" name="__codelineno-15-3"></a>加载Driver:
-<a href="#__codelineno-15-4" id="__codelineno-15-4" name="__codelineno-15-4"></a>    - Class.forName(&lt;Driver&gt;)
-<a href="#__codelineno-15-5" id="__codelineno-15-5" name="__codelineno-15-5"></a>    - &lt;Driver&gt; : com.mysql.jdbc 或 com.mysql.cj.jdbc
-<a href="#__codelineno-15-6" id="__codelineno-15-6" name="__codelineno-15-6"></a>获取连接:
-<a href="#__codelineno-15-7" id="__codelineno-15-7" name="__codelineno-15-7"></a>    - `DriverManager.getConnection(&lt;url&gt;, &lt;用户名&gt;, &lt;密码&gt;)`
-<a href="#__codelineno-15-8" id="__codelineno-15-8" name="__codelineno-15-8"></a>    - `&lt;url&gt;` - 如java-mysql: `jdbc:mysql://localhost:3306/&lt;数据库名&gt;`
+<h4 id="3jstl-cforeach">3.JSTL 的 c:foreach</h4>
+<div class="highlight"><pre><span></span><code>```
+a)  - &lt;c:forEach&gt;
+    - items="&lt;List&lt;Object&gt;&gt;" - 迭代的列表
+    - begin/end/step="&lt;int&gt;" - 开始/结束下标(下标从0开始)，步长
+    - var="&lt;str&gt;" - 当前迭代元素的标识
+    - varStatus - 当前迭代状态的标识
+
+b)  - &lt;c:choose&gt;
+    - &lt;c:when test="&lt;boolean&gt;"&gt; - `multi`
+    - &lt;c:otherwise&gt;
+```
+</code></pre></div>
+<h4 id="4business">4.业务模型(Business类)</h4>
+<p>先定义接口再写实现类，如何调用DAO层的类访问数据库</p>
+<div class="highlight"><pre><span></span><code>- 分别定义接口和实现类是java架构思想中的开闭原则（扩展开放，修改关闭）的体现；比如多语言化，就需要一个接口，多种不同语言的实现
+- Dao层先写接口，在实现类，然后调用？
+</code></pre></div>
+<h4 id="5dao">5.数据访问层DAO</h4>
+<p>先定义接口再写实现类, 使用JDBC访问数据库的方法: PreparedStatement, ResultSet等数据访问类与接口的使用 </p>
+<div class="highlight"><pre><span></span><code>- Jdbc: 
+    - `Class.forName("&lt;驱动器类&gt;")`：加载驱动器类
+    - `DriverManager.getConnection("&lt;数据库url&gt;", "&lt;用户名&gt;", "&lt;密码&gt;") Connection`：获得一个连接(一个`&lt;Connection&gt;`对应一个`sql连接`中的一个数据库)
+
+-`PreparedStatement`相关方法:
+    - `setXxx(&lt;?所在的位置/下标&gt;, &lt;val&gt;)`：往`&lt;PreparedStatement&gt;`中待定值`?`指定一个确定值(下标从1开始)
+    - `execute(...) boolean`：
+    - `executeUpdate() int`：执行`sql`，返回受影响行数(一般是`insert/delete/update`)
+    - `executeQuery() ResultSet`：执行`sql`，返回查询结果集(一般是`select`)
+
+`Statement`相关方法:
+    - `execute("&lt;sql&gt;", ...) boolean`：
+    - `executeUpdate("&lt;sql&gt;") int`：执行`sql`，返回受影响行数
+    - `executeQuery("&lt;sql&gt;") ResultSet`：执行`sql`，返回查询结果集
+
+`ResultSet`相关方法:
+    - `beforeFirst()`：指针移动到头部前面, 通常是`&lt;ResultSet&gt;`最初时的状态
+    - `next()`：指针移动一行
+    - `getXxx("&lt;字段名&gt;") Xxx`：将当前行对应字段的数据转换为`Xxx`类型，并返回
+    - `getXxx(&lt;下标&gt;)`：下标从1开始
 </code></pre></div>
 </article>
 </div>
@@ -661,7 +721,7 @@
 </main>
 <footer class="md-footer">
 <nav aria-label="页脚" class="md-footer__inner md-grid">
-<a aria-label="上一页: Index" class="md-footer__link md-footer__link--prev" href="../" rel="prev">
+<a aria-label="上一页: Jsp" class="md-footer__link md-footer__link--prev" href="../jsp/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -670,21 +730,8 @@
 <span class="md-footer__direction">
                   上一页
                 </span>
-                Index
-              </div>
-</div>
-</a>
-<a aria-label="下一页: Jsp" class="md-footer__link md-footer__link--next" href="../jsp/" rel="next">
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
-                  下一页
-                </span>
                 Jsp
               </div>
-</div>
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
 </div>
 </a>
 </nav>

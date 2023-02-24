@@ -6,6 +6,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="../servlet/" rel="prev"/>
+<link href="../%E5%A4%A7%E7%BA%B2/" rel="next"/>
 <link href="https://pic.peo.pw/a/2023/01/12/63bfb934b1b06.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.0.3" name="generator"/>
 <title>Jsp - 复习</title>
@@ -294,6 +295,11 @@
 </ul>
 </nav>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../%E5%A4%A7%E7%BA%B2/">
+        大纲
+      </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -358,7 +364,6 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1>Jsp</h1>
-<h3 id="_1"></h3>
 <div class="highlight"><span class="filename">jsp初始化</span><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>翻译JSP页面 - JSP translator将JSP翻译为&lt;servlet&gt;.java
 <a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>编译JSP页面 - complier编译.java文件
 <a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>加载类 - classloader加载类文件
@@ -367,6 +372,99 @@
 <a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a>请求处理 - 容器调用 _jspService() 方法
 <a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a>销毁 - 容器调用 jspDestroy() 方法
 </code></pre></div>
+<p>EL隐式变量, jsp隐式变量, Servlet 对比</p>
+<table>
+<thead>
+<tr>
+<th align="center">EL ${}</th>
+<th align="center">jsp <code>&lt;%= %&gt;</code></th>
+<th align="center">Servlet/Object</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">pageContext</td>
+<td align="center">pageContext</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">applicationScope</td>
+<td align="center">application</td>
+<td align="center">ServletContext</td>
+</tr>
+<tr>
+<td align="center">sessionScope</td>
+<td align="center">session</td>
+<td align="center">HttpSession</td>
+</tr>
+<tr>
+<td align="center">requestScope</td>
+<td align="center">request</td>
+<td align="center">HttpServletRequest</td>
+</tr>
+<tr>
+<td align="center">pageScope</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">initParam</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">page</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">param</td>
+<td align="center"></td>
+<td align="center">Map<string, string=""></string,></td>
+</tr>
+<tr>
+<td align="center">paramValues</td>
+<td align="center"></td>
+<td align="center"><code>Enumeration&lt;String&gt;</code></td>
+</tr>
+<tr>
+<td align="center">header</td>
+<td align="center"></td>
+<td align="center">String</td>
+</tr>
+<tr>
+<td align="center">headerValues</td>
+<td align="center"></td>
+<td align="center"><code>Enumeration&lt;String&gt;</code></td>
+</tr>
+<tr>
+<td align="center">cookie</td>
+<td align="center"></td>
+<td align="center">HttpCookie</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">out</td>
+<td align="center">JSPWriter / PrintWriter</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">response</td>
+<td align="center">HttpServletResponse</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">config</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">exception</td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p>// param, paramValues, header, headerValues, cookie 均是 request能获取的对象</p>
 <p>api:</p>
 <ul>
 <li>javax.servlet.jsp</li>
@@ -395,6 +493,7 @@
 <li>EL 特有功能: 往字符串里添加 EL <code>${}</code></li>
 </ul>
 </div>
+<h3 id="_1"></h3>
 <h2 id="1">1.指令元素</h2>
 <div class="highlight"><span class="filename">指令元素</span><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>page:
 <a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a>    - 定义
@@ -509,26 +608,6 @@
 <a href="#__codelineno-11-10" id="__codelineno-11-10" name="__codelineno-11-10"></a>initParam - 返回 所有初始化参数的map
 <a href="#__codelineno-11-11" id="__codelineno-11-11" name="__codelineno-11-11"></a>pageContext - 返回 page/request/session/application 四个 scope内属性的map
 </code></pre></div>
-<div class="highlight"><span class="filename">EL隐式变量与jsp隐式变量对比</span><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a>EL ${}              jsp &lt;%= %&gt;
-<a href="#__codelineno-12-2" id="__codelineno-12-2" name="__codelineno-12-2"></a>
-<a href="#__codelineno-12-3" id="__codelineno-12-3" name="__codelineno-12-3"></a>pageContext         pageContext
-<a href="#__codelineno-12-4" id="__codelineno-12-4" name="__codelineno-12-4"></a>applicationScope    application
-<a href="#__codelineno-12-5" id="__codelineno-12-5" name="__codelineno-12-5"></a>sessionScope        session
-<a href="#__codelineno-12-6" id="__codelineno-12-6" name="__codelineno-12-6"></a>requestScope        request
-<a href="#__codelineno-12-7" id="__codelineno-12-7" name="__codelineno-12-7"></a>pageScope
-<a href="#__codelineno-12-8" id="__codelineno-12-8" name="__codelineno-12-8"></a>initParam
-<a href="#__codelineno-12-9" id="__codelineno-12-9" name="__codelineno-12-9"></a>                    page
-<a href="#__codelineno-12-10" id="__codelineno-12-10" name="__codelineno-12-10"></a>param
-<a href="#__codelineno-12-11" id="__codelineno-12-11" name="__codelineno-12-11"></a>paramValues
-<a href="#__codelineno-12-12" id="__codelineno-12-12" name="__codelineno-12-12"></a>header
-<a href="#__codelineno-12-13" id="__codelineno-12-13" name="__codelineno-12-13"></a>headerValues
-<a href="#__codelineno-12-14" id="__codelineno-12-14" name="__codelineno-12-14"></a>cookie
-<a href="#__codelineno-12-15" id="__codelineno-12-15" name="__codelineno-12-15"></a>                    out
-<a href="#__codelineno-12-16" id="__codelineno-12-16" name="__codelineno-12-16"></a>                    response
-<a href="#__codelineno-12-17" id="__codelineno-12-17" name="__codelineno-12-17"></a>                    config
-<a href="#__codelineno-12-18" id="__codelineno-12-18" name="__codelineno-12-18"></a>                    exception
-<a href="#__codelineno-12-19" id="__codelineno-12-19" name="__codelineno-12-19"></a>// param, paramValues, header, headerValues, cookie 均是 request能获取的对象
-</code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <ul>
@@ -541,128 +620,128 @@
 </div>
 <h2 id="7jstl">7.JSTL</h2>
 <p>JSTL用于简化 jsp 开发</p>
-<div class="highlight"><span class="filename">引入</span><pre><span></span><code><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a>&lt;%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="前缀" %&gt;
+<div class="highlight"><span class="filename">引入</span><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a>&lt;%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="前缀" %&gt;
 </code></pre></div>
-<div class="highlight"><span class="filename">core 标签</span><pre><span></span><code><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a>&lt;c:out value="字符串 | EL表达式"/&gt;
-<a href="#__codelineno-14-2" id="__codelineno-14-2" name="__codelineno-14-2"></a>    - 用于输出字符串 (不会转换为html, 否则需要用EL表达式)
-<a href="#__codelineno-14-3" id="__codelineno-14-3" name="__codelineno-14-3"></a>&lt;c:import var="变量名" url="资源url"/&gt;
-<a href="#__codelineno-14-4" id="__codelineno-14-4" name="__codelineno-14-4"></a>    - 向资源url发送请求, 将返回的内容赋值给 var
-<a href="#__codelineno-14-5" id="__codelineno-14-5" name="__codelineno-14-5"></a>&lt;c:set var="" scope="" value=""/&gt;
-<a href="#__codelineno-14-6" id="__codelineno-14-6" name="__codelineno-14-6"></a>    - 它用于设置在"scope"中计算的表达式的结果。&lt;c：set&gt; 标记很有用，因为它计算表达式并使用结果设置 java.util.Map 或 JavaBean 的值 ？
-<a href="#__codelineno-14-7" id="__codelineno-14-7" name="__codelineno-14-7"></a>&lt;c:remove var="变量名" scope="作用域" /&gt;
-<a href="#__codelineno-14-8" id="__codelineno-14-8" name="__codelineno-14-8"></a>    - 删除特定作用域的变量
-<a href="#__codelineno-14-9" id="__codelineno-14-9" name="__codelineno-14-9"></a>&lt;c:catch var ="异常变量"&gt;
-<a href="#__codelineno-14-10" id="__codelineno-14-10" name="__codelineno-14-10"></a>    - 可能出现异常的内容&lt;/c:catch&gt; - 捕获异常, 并选择性地公开异常
-<a href="#__codelineno-14-11" id="__codelineno-14-11" name="__codelineno-14-11"></a>&lt;c:if test="逻辑表达式"&gt;语句&lt;/c:if&gt;
-<a href="#__codelineno-14-12" id="__codelineno-14-12" name="__codelineno-14-12"></a>    - 仅当test="true"时, 执行语句 (通常使用EL表达式作为 test的内容)
-<a href="#__codelineno-14-13" id="__codelineno-14-13" name="__codelineno-14-13"></a>&lt;c:choose&gt;子句&lt;c:choose&gt; - 用于互斥的控制结构 (即 if-else 结构)
-<a href="#__codelineno-14-14" id="__codelineno-14-14" name="__codelineno-14-14"></a>    - &lt;c:when test="逻辑表达式"&gt;语句&lt;/c:when&gt; - 通常有多个这样的语句
-<a href="#__codelineno-14-15" id="__codelineno-14-15" name="__codelineno-14-15"></a>    - &lt;c:otherwise&gt;语句&lt;/c:otherwise&gt; - 但 c:when 不满足条件时执行此语句
-<a href="#__codelineno-14-16" id="__codelineno-14-16" name="__codelineno-14-16"></a>c:forEach:
-<a href="#__codelineno-14-17" id="__codelineno-14-17" name="__codelineno-14-17"></a>    - &lt;c:forEach var="迭代器" begin="" end="" step="步长"&gt;语句&lt;/c:forEach&gt; - 用于代替循环
-<a href="#__codelineno-14-18" id="__codelineno-14-18" name="__codelineno-14-18"></a>    - &lt;c:forEach items="" &gt;&lt;/c:forEach&gt;
-<a href="#__codelineno-14-19" id="__codelineno-14-19" name="__codelineno-14-19"></a>&lt;c:forTokens var="迭代器" items="字符串" delims="分隔符"&gt;语句&lt;/c:forTokens&gt;
-<a href="#__codelineno-14-20" id="__codelineno-14-20" name="__codelineno-14-20"></a>    - 用于将字符串按分隔符分割为多个块, 迭代所有的块
-<a href="#__codelineno-14-21" id="__codelineno-14-21" name="__codelineno-14-21"></a>&lt;c:param name="参数名" value="参数值"/&gt;
-<a href="#__codelineno-14-22" id="__codelineno-14-22" name="__codelineno-14-22"></a>    - 为 s:import的url属性 或 s:url的value属性 或 s:redirect的url属性 添加参数
-<a href="#__codelineno-14-23" id="__codelineno-14-23" name="__codelineno-14-23"></a>&lt;c:url&gt; - 用于定制url (以替代response.encodeURL() 的功能; 如: 添加参数, 网址格式, 网址编码)
-<a href="#__codelineno-14-24" id="__codelineno-14-24" name="__codelineno-14-24"></a>    - &lt;c:url value="url"&gt;&lt;/c:url&gt; - 输出一个url
-<a href="#__codelineno-14-25" id="__codelineno-14-25" name="__codelineno-14-25"></a>    - &lt;c:url value="url" var="变量"&gt;&lt;/c:url&gt; - 将url输出重定向到指定变量
+<div class="highlight"><span class="filename">core 标签</span><pre><span></span><code><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a>&lt;c:out value="字符串 | EL表达式"/&gt;
+<a href="#__codelineno-13-2" id="__codelineno-13-2" name="__codelineno-13-2"></a>    - 用于输出字符串 (不会转换为html, 否则需要用EL表达式)
+<a href="#__codelineno-13-3" id="__codelineno-13-3" name="__codelineno-13-3"></a>&lt;c:import var="变量名" url="资源url"/&gt;
+<a href="#__codelineno-13-4" id="__codelineno-13-4" name="__codelineno-13-4"></a>    - 向资源url发送请求, 将返回的内容赋值给 var
+<a href="#__codelineno-13-5" id="__codelineno-13-5" name="__codelineno-13-5"></a>&lt;c:set var="" scope="" value=""/&gt;
+<a href="#__codelineno-13-6" id="__codelineno-13-6" name="__codelineno-13-6"></a>    - 它用于设置在"scope"中计算的表达式的结果。&lt;c：set&gt; 标记很有用，因为它计算表达式并使用结果设置 java.util.Map 或 JavaBean 的值 ？
+<a href="#__codelineno-13-7" id="__codelineno-13-7" name="__codelineno-13-7"></a>&lt;c:remove var="变量名" scope="作用域" /&gt;
+<a href="#__codelineno-13-8" id="__codelineno-13-8" name="__codelineno-13-8"></a>    - 删除特定作用域的变量
+<a href="#__codelineno-13-9" id="__codelineno-13-9" name="__codelineno-13-9"></a>&lt;c:catch var ="异常变量"&gt;
+<a href="#__codelineno-13-10" id="__codelineno-13-10" name="__codelineno-13-10"></a>    - 可能出现异常的内容&lt;/c:catch&gt; - 捕获异常, 并选择性地公开异常
+<a href="#__codelineno-13-11" id="__codelineno-13-11" name="__codelineno-13-11"></a>&lt;c:if test="逻辑表达式"&gt;语句&lt;/c:if&gt;
+<a href="#__codelineno-13-12" id="__codelineno-13-12" name="__codelineno-13-12"></a>    - 仅当test="true"时, 执行语句 (通常使用EL表达式作为 test的内容)
+<a href="#__codelineno-13-13" id="__codelineno-13-13" name="__codelineno-13-13"></a>&lt;c:choose&gt;子句&lt;c:choose&gt; - 用于互斥的控制结构 (即 if-else 结构)
+<a href="#__codelineno-13-14" id="__codelineno-13-14" name="__codelineno-13-14"></a>    - &lt;c:when test="逻辑表达式"&gt;语句&lt;/c:when&gt; - 通常有多个这样的语句
+<a href="#__codelineno-13-15" id="__codelineno-13-15" name="__codelineno-13-15"></a>    - &lt;c:otherwise&gt;语句&lt;/c:otherwise&gt; - 但 c:when 不满足条件时执行此语句
+<a href="#__codelineno-13-16" id="__codelineno-13-16" name="__codelineno-13-16"></a>c:forEach:
+<a href="#__codelineno-13-17" id="__codelineno-13-17" name="__codelineno-13-17"></a>    - &lt;c:forEach var="迭代器" begin="" end="" step="步长"&gt;语句&lt;/c:forEach&gt; - 用于代替循环
+<a href="#__codelineno-13-18" id="__codelineno-13-18" name="__codelineno-13-18"></a>    - &lt;c:forEach items="" &gt;&lt;/c:forEach&gt;
+<a href="#__codelineno-13-19" id="__codelineno-13-19" name="__codelineno-13-19"></a>&lt;c:forTokens var="迭代器" items="字符串" delims="分隔符"&gt;语句&lt;/c:forTokens&gt;
+<a href="#__codelineno-13-20" id="__codelineno-13-20" name="__codelineno-13-20"></a>    - 用于将字符串按分隔符分割为多个块, 迭代所有的块
+<a href="#__codelineno-13-21" id="__codelineno-13-21" name="__codelineno-13-21"></a>&lt;c:param name="参数名" value="参数值"/&gt;
+<a href="#__codelineno-13-22" id="__codelineno-13-22" name="__codelineno-13-22"></a>    - 为 s:import的url属性 或 s:url的value属性 或 s:redirect的url属性 添加参数
+<a href="#__codelineno-13-23" id="__codelineno-13-23" name="__codelineno-13-23"></a>&lt;c:url&gt; - 用于定制url (以替代response.encodeURL() 的功能; 如: 添加参数, 网址格式, 网址编码)
+<a href="#__codelineno-13-24" id="__codelineno-13-24" name="__codelineno-13-24"></a>    - &lt;c:url value="url"&gt;&lt;/c:url&gt; - 输出一个url
+<a href="#__codelineno-13-25" id="__codelineno-13-25" name="__codelineno-13-25"></a>    - &lt;c:url value="url" var="变量"&gt;&lt;/c:url&gt; - 将url输出重定向到指定变量
 </code></pre></div>
-<div class="highlight"><span class="filename">标签</span><pre><span></span><code><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a>boolean fn:contains(&lt;字符串&gt;, &lt;模式串&gt;) - 判断文本串能否匹配模式串
-<a href="#__codelineno-15-2" id="__codelineno-15-2" name="__codelineno-15-2"></a>boolean fn:containsIgnoreCase(&lt;字符串&gt;, &lt;模式串&gt;) - 判断文本串能否匹配模式串 (大小写不敏感)
-<a href="#__codelineno-15-3" id="__codelineno-15-3" name="__codelineno-15-3"></a>boolean fn:endsWith(&lt;字符串&gt;, &lt;模式串&gt;) - 判断模式串是否为文本串的后缀
-<a href="#__codelineno-15-4" id="__codelineno-15-4" name="__codelineno-15-4"></a>String fn:escapeXml(&lt;字符串&gt;) - 将字符串进行转换, 使内容不会被浏览器渲染为xml格式应有的表现 (如: 小于号`&lt;` 会转换为`&amp;lt;`)
-<a href="#__codelineno-15-5" id="__codelineno-15-5" name="__codelineno-15-5"></a>int fn:indexOf(&lt;字符串&gt;, &lt;模式串&gt;) - 返回模式串首次出现的下标
-<a href="#__codelineno-15-6" id="__codelineno-15-6" name="__codelineno-15-6"></a>String fn:trim(&lt;字符串&gt;) - 删除两端空格
-<a href="#__codelineno-15-7" id="__codelineno-15-7" name="__codelineno-15-7"></a>String fn:toLowerCase(&lt;字符串&gt;) - 转小写
-<a href="#__codelineno-15-8" id="__codelineno-15-8" name="__codelineno-15-8"></a>String fn:toUpperCase(&lt;字符串&gt;) - 转大写
-<a href="#__codelineno-15-9" id="__codelineno-15-9" name="__codelineno-15-9"></a>String fn:substring(&lt;字符串&gt;, &lt;start&gt;, &lt;end&gt;) - 取子串
-<a href="#__codelineno-15-10" id="__codelineno-15-10" name="__codelineno-15-10"></a>String fn:substringAfter(&lt;字符串&gt;, &lt;模式串&gt;) - 删除第一次匹配到的模式串及其前缀 (简言之就是设计来匹配字符串的所有模式串的)
-<a href="#__codelineno-15-11" id="__codelineno-15-11" name="__codelineno-15-11"></a>String fn:substringBefore(&lt;字符串&gt;, &lt;模式串&gt;) - 删除最后一次匹配到的模式串及其前缀
-<a href="#__codelineno-15-12" id="__codelineno-15-12" name="__codelineno-15-12"></a>int fn:length(&lt;Object&gt;) - 返回 字符数 或 集合元素个数
+<div class="highlight"><span class="filename">标签</span><pre><span></span><code><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a>boolean fn:contains(&lt;字符串&gt;, &lt;模式串&gt;) - 判断文本串能否匹配模式串
+<a href="#__codelineno-14-2" id="__codelineno-14-2" name="__codelineno-14-2"></a>boolean fn:containsIgnoreCase(&lt;字符串&gt;, &lt;模式串&gt;) - 判断文本串能否匹配模式串 (大小写不敏感)
+<a href="#__codelineno-14-3" id="__codelineno-14-3" name="__codelineno-14-3"></a>boolean fn:endsWith(&lt;字符串&gt;, &lt;模式串&gt;) - 判断模式串是否为文本串的后缀
+<a href="#__codelineno-14-4" id="__codelineno-14-4" name="__codelineno-14-4"></a>String fn:escapeXml(&lt;字符串&gt;) - 将字符串进行转换, 使内容不会被浏览器渲染为xml格式应有的表现 (如: 小于号`&lt;` 会转换为`&amp;lt;`)
+<a href="#__codelineno-14-5" id="__codelineno-14-5" name="__codelineno-14-5"></a>int fn:indexOf(&lt;字符串&gt;, &lt;模式串&gt;) - 返回模式串首次出现的下标
+<a href="#__codelineno-14-6" id="__codelineno-14-6" name="__codelineno-14-6"></a>String fn:trim(&lt;字符串&gt;) - 删除两端空格
+<a href="#__codelineno-14-7" id="__codelineno-14-7" name="__codelineno-14-7"></a>String fn:toLowerCase(&lt;字符串&gt;) - 转小写
+<a href="#__codelineno-14-8" id="__codelineno-14-8" name="__codelineno-14-8"></a>String fn:toUpperCase(&lt;字符串&gt;) - 转大写
+<a href="#__codelineno-14-9" id="__codelineno-14-9" name="__codelineno-14-9"></a>String fn:substring(&lt;字符串&gt;, &lt;start&gt;, &lt;end&gt;) - 取子串
+<a href="#__codelineno-14-10" id="__codelineno-14-10" name="__codelineno-14-10"></a>String fn:substringAfter(&lt;字符串&gt;, &lt;模式串&gt;) - 删除第一次匹配到的模式串及其前缀 (简言之就是设计来匹配字符串的所有模式串的)
+<a href="#__codelineno-14-11" id="__codelineno-14-11" name="__codelineno-14-11"></a>String fn:substringBefore(&lt;字符串&gt;, &lt;模式串&gt;) - 删除最后一次匹配到的模式串及其前缀
+<a href="#__codelineno-14-12" id="__codelineno-14-12" name="__codelineno-14-12"></a>int fn:length(&lt;Object&gt;) - 返回 字符数 或 集合元素个数
 </code></pre></div>
-<div class="highlight"><span class="filename">fmt 标签</span><pre><span></span><code><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a>fmt:parseNumber - 它用于解析货币、百分比或数字的字符串表示形式
-<a href="#__codelineno-16-2" id="__codelineno-16-2" name="__codelineno-16-2"></a>fmt:timeZone - 它指定嵌套在其正文或时区中的分析操作，用于任何时间格式
-<a href="#__codelineno-16-3" id="__codelineno-16-3" name="__codelineno-16-3"></a>fmt:formatNumber - 它用于以特定格式或精度格式化数值
-<a href="#__codelineno-16-4" id="__codelineno-16-4" name="__codelineno-16-4"></a>fmt:parseDate - 它分析时间和日期的字符串表示形式
-<a href="#__codelineno-16-5" id="__codelineno-16-5" name="__codelineno-16-5"></a>fmt:bundle - 它用于创建将由其标签正文使用的资源包对象
-<a href="#__codelineno-16-6" id="__codelineno-16-6" name="__codelineno-16-6"></a>fmt:setTimeZone - 它将时区存储在时区配置变量中
-<a href="#__codelineno-16-7" id="__codelineno-16-7" name="__codelineno-16-7"></a>fmt:setBundle - 它加载资源包并将其存储在捆绑包配置变量或命名作用域变量中
-<a href="#__codelineno-16-8" id="__codelineno-16-8" name="__codelineno-16-8"></a>fmt:message - 它显示国际化消息
-<a href="#__codelineno-16-9" id="__codelineno-16-9" name="__codelineno-16-9"></a>fmt:formatDate - 它使用提供的模式和样式格式化时间和/或日期
+<div class="highlight"><span class="filename">fmt 标签</span><pre><span></span><code><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a>fmt:parseNumber - 它用于解析货币、百分比或数字的字符串表示形式
+<a href="#__codelineno-15-2" id="__codelineno-15-2" name="__codelineno-15-2"></a>fmt:timeZone - 它指定嵌套在其正文或时区中的分析操作，用于任何时间格式
+<a href="#__codelineno-15-3" id="__codelineno-15-3" name="__codelineno-15-3"></a>fmt:formatNumber - 它用于以特定格式或精度格式化数值
+<a href="#__codelineno-15-4" id="__codelineno-15-4" name="__codelineno-15-4"></a>fmt:parseDate - 它分析时间和日期的字符串表示形式
+<a href="#__codelineno-15-5" id="__codelineno-15-5" name="__codelineno-15-5"></a>fmt:bundle - 它用于创建将由其标签正文使用的资源包对象
+<a href="#__codelineno-15-6" id="__codelineno-15-6" name="__codelineno-15-6"></a>fmt:setTimeZone - 它将时区存储在时区配置变量中
+<a href="#__codelineno-15-7" id="__codelineno-15-7" name="__codelineno-15-7"></a>fmt:setBundle - 它加载资源包并将其存储在捆绑包配置变量或命名作用域变量中
+<a href="#__codelineno-15-8" id="__codelineno-15-8" name="__codelineno-15-8"></a>fmt:message - 它显示国际化消息
+<a href="#__codelineno-15-9" id="__codelineno-15-9" name="__codelineno-15-9"></a>fmt:formatDate - 它使用提供的模式和样式格式化时间和/或日期
 </code></pre></div>
-<div class="highlight"><span class="filename">xml 标签</span><pre><span></span><code><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a>x:out - 类似于 &lt;%= ...&gt;标记, 但用于 XPath 表达式
-<a href="#__codelineno-17-2" id="__codelineno-17-2" name="__codelineno-17-2"></a>    - 如: 
-<a href="#__codelineno-17-3" id="__codelineno-17-3" name="__codelineno-17-3"></a>        - &lt;c:set var="变量名"&gt;xml字符串&lt;/c:set&gt;
-<a href="#__codelineno-17-4" id="__codelineno-17-4" name="__codelineno-17-4"></a>        - &lt;x:out select="$xml变量/标签名[索引]/&lt;标签名1&gt;" /&gt; 
-<a href="#__codelineno-17-5" id="__codelineno-17-5" name="__codelineno-17-5"></a>x:parse - 用于解析xml文件的变量, 并传递给指定变量
-<a href="#__codelineno-17-6" id="__codelineno-17-6" name="__codelineno-17-6"></a>    - 如: 
-<a href="#__codelineno-17-7" id="__codelineno-17-7" name="__codelineno-17-7"></a>        - &lt;c:import var="变量名" url="xxx.xml"/&gt; - 获取xml字符串
-<a href="#__codelineno-17-8" id="__codelineno-17-8" name="__codelineno-17-8"></a>        - &lt;x:parse var="变量名1" xml="${变量名}"/&gt;
-<a href="#__codelineno-17-9" id="__codelineno-17-9" name="__codelineno-17-9"></a>x:set - 它用于将变量设置为 XPath 表达式的值
-<a href="#__codelineno-17-10" id="__codelineno-17-10" name="__codelineno-17-10"></a>    - 如: &lt;x:set var="变量名" select="$xml变量/标签名[索引]/&lt;标签名1&gt;"/&gt;
-<a href="#__codelineno-17-11" id="__codelineno-17-11" name="__codelineno-17-11"></a>x:choose, x:when, x:otherwise
-<a href="#__codelineno-17-12" id="__codelineno-17-12" name="__codelineno-17-12"></a>    - if-else控制结构, test内部可包含XPath表达式
-<a href="#__codelineno-17-13" id="__codelineno-17-13" name="__codelineno-17-13"></a>x:if - if控制结构, test内部可包含XPath表达式
-<a href="#__codelineno-17-14" id="__codelineno-17-14" name="__codelineno-17-14"></a>x:transform
-<a href="#__codelineno-17-15" id="__codelineno-17-15" name="__codelineno-17-15"></a>    - 它在XML文档中用于提供XSL(可扩展样式表语言)转换
-<a href="#__codelineno-17-16" id="__codelineno-17-16" name="__codelineno-17-16"></a>    - 如: &lt;x:transform xml="${xml}" xslt="${xsl}" /&gt;
-<a href="#__codelineno-17-17" id="__codelineno-17-17" name="__codelineno-17-17"></a>    - 神奇的东西...
-<a href="#__codelineno-17-18" id="__codelineno-17-18" name="__codelineno-17-18"></a>X:param
-<a href="#__codelineno-17-19" id="__codelineno-17-19" name="__codelineno-17-19"></a>    - 它与 x:transform 标记一起使用, 用于设置 XSLT 样式表中的参数
-<a href="#__codelineno-17-20" id="__codelineno-17-20" name="__codelineno-17-20"></a>    - 如: &lt;x:param name="bgColor" value="yellow"/&gt;
+<div class="highlight"><span class="filename">xml 标签</span><pre><span></span><code><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a>x:out - 类似于 &lt;%= ...&gt;标记, 但用于 XPath 表达式
+<a href="#__codelineno-16-2" id="__codelineno-16-2" name="__codelineno-16-2"></a>    - 如: 
+<a href="#__codelineno-16-3" id="__codelineno-16-3" name="__codelineno-16-3"></a>        - &lt;c:set var="变量名"&gt;xml字符串&lt;/c:set&gt;
+<a href="#__codelineno-16-4" id="__codelineno-16-4" name="__codelineno-16-4"></a>        - &lt;x:out select="$xml变量/标签名[索引]/&lt;标签名1&gt;" /&gt; 
+<a href="#__codelineno-16-5" id="__codelineno-16-5" name="__codelineno-16-5"></a>x:parse - 用于解析xml文件的变量, 并传递给指定变量
+<a href="#__codelineno-16-6" id="__codelineno-16-6" name="__codelineno-16-6"></a>    - 如: 
+<a href="#__codelineno-16-7" id="__codelineno-16-7" name="__codelineno-16-7"></a>        - &lt;c:import var="变量名" url="xxx.xml"/&gt; - 获取xml字符串
+<a href="#__codelineno-16-8" id="__codelineno-16-8" name="__codelineno-16-8"></a>        - &lt;x:parse var="变量名1" xml="${变量名}"/&gt;
+<a href="#__codelineno-16-9" id="__codelineno-16-9" name="__codelineno-16-9"></a>x:set - 它用于将变量设置为 XPath 表达式的值
+<a href="#__codelineno-16-10" id="__codelineno-16-10" name="__codelineno-16-10"></a>    - 如: &lt;x:set var="变量名" select="$xml变量/标签名[索引]/&lt;标签名1&gt;"/&gt;
+<a href="#__codelineno-16-11" id="__codelineno-16-11" name="__codelineno-16-11"></a>x:choose, x:when, x:otherwise
+<a href="#__codelineno-16-12" id="__codelineno-16-12" name="__codelineno-16-12"></a>    - if-else控制结构, test内部可包含XPath表达式
+<a href="#__codelineno-16-13" id="__codelineno-16-13" name="__codelineno-16-13"></a>x:if - if控制结构, test内部可包含XPath表达式
+<a href="#__codelineno-16-14" id="__codelineno-16-14" name="__codelineno-16-14"></a>x:transform
+<a href="#__codelineno-16-15" id="__codelineno-16-15" name="__codelineno-16-15"></a>    - 它在XML文档中用于提供XSL(可扩展样式表语言)转换
+<a href="#__codelineno-16-16" id="__codelineno-16-16" name="__codelineno-16-16"></a>    - 如: &lt;x:transform xml="${xml}" xslt="${xsl}" /&gt;
+<a href="#__codelineno-16-17" id="__codelineno-16-17" name="__codelineno-16-17"></a>    - 神奇的东西...
+<a href="#__codelineno-16-18" id="__codelineno-16-18" name="__codelineno-16-18"></a>X:param
+<a href="#__codelineno-16-19" id="__codelineno-16-19" name="__codelineno-16-19"></a>    - 它与 x:transform 标记一起使用, 用于设置 XSLT 样式表中的参数
+<a href="#__codelineno-16-20" id="__codelineno-16-20" name="__codelineno-16-20"></a>    - 如: &lt;x:param name="bgColor" value="yellow"/&gt;
 </code></pre></div>
-<div class="highlight"><span class="filename">sql 标签</span><pre><span></span><code><a href="#__codelineno-18-1" id="__codelineno-18-1" name="__codelineno-18-1"></a>sql:setDataSource
-<a href="#__codelineno-18-2" id="__codelineno-18-2" name="__codelineno-18-2"></a>    - 用于创建仅适用于原型设计的简单数据源
-<a href="#__codelineno-18-3" id="__codelineno-18-3" name="__codelineno-18-3"></a>    - 如: &lt;sql:setDataSource var="db"
-<a href="#__codelineno-18-4" id="__codelineno-18-4" name="__codelineno-18-4"></a>           driver="com.mysql.cj.jdbc.Driver"
-<a href="#__codelineno-18-5" id="__codelineno-18-5" name="__codelineno-18-5"></a>           url="jdbc:mysql://localhost:3306/tmp"
-<a href="#__codelineno-18-6" id="__codelineno-18-6" name="__codelineno-18-6"></a>           user="root"
-<a href="#__codelineno-18-7" id="__codelineno-18-7" name="__codelineno-18-7"></a>           password="2147483647"/&gt;
-<a href="#__codelineno-18-8" id="__codelineno-18-8" name="__codelineno-18-8"></a>sql:query
-<a href="#__codelineno-18-9" id="__codelineno-18-9" name="__codelineno-18-9"></a>    - 用于执行在其 sql 属性或正文中定义的 SQL 查询
-<a href="#__codelineno-18-10" id="__codelineno-18-10" name="__codelineno-18-10"></a>    - 如:
-<a href="#__codelineno-18-11" id="__codelineno-18-11" name="__codelineno-18-11"></a>        &lt;sql:query var="resultSet" dataSource="${db}"&gt;
-<a href="#__codelineno-18-12" id="__codelineno-18-12" name="__codelineno-18-12"></a>            select * from tmp
-<a href="#__codelineno-18-13" id="__codelineno-18-13" name="__codelineno-18-13"></a>        &lt;/sql:query&gt;
-<a href="#__codelineno-18-14" id="__codelineno-18-14" name="__codelineno-18-14"></a>sql:update
-<a href="#__codelineno-18-15" id="__codelineno-18-15" name="__codelineno-18-15"></a>    - 用于执行在其 sql 属性或标记正文中定义的 SQL DML 查询
-<a href="#__codelineno-18-16" id="__codelineno-18-16" name="__codelineno-18-16"></a>    - 如:
-<a href="#__codelineno-18-17" id="__codelineno-18-17" name="__codelineno-18-17"></a>        &lt;sql:query var="resultSet" dataSource="${db}"&gt;
-<a href="#__codelineno-18-18" id="__codelineno-18-18" name="__codelineno-18-18"></a>            INSERT INTO Students VALUES (154,'Nasreen', 'jaha', 25); 
-<a href="#__codelineno-18-19" id="__codelineno-18-19" name="__codelineno-18-19"></a>        &lt;/sql:query&gt;
-<a href="#__codelineno-18-20" id="__codelineno-18-20" name="__codelineno-18-20"></a>sql:param
-<a href="#__codelineno-18-21" id="__codelineno-18-21" name="__codelineno-18-21"></a>    - 用于在 SQL 语句中设置参数值 (用于 sql:query, sql:update)
-<a href="#__codelineno-18-22" id="__codelineno-18-22" name="__codelineno-18-22"></a>    - 如:
-<a href="#__codelineno-18-23" id="__codelineno-18-23" name="__codelineno-18-23"></a>        &lt;sql:update var="count" dataSource="${db}"&gt;  
-<a href="#__codelineno-18-24" id="__codelineno-18-24" name="__codelineno-18-24"></a>            DELETE FROM Students WHERE Id = ?  
-<a href="#__codelineno-18-25" id="__codelineno-18-25" name="__codelineno-18-25"></a>            &lt;sql:param value="${StudentId}" /&gt;  
-<a href="#__codelineno-18-26" id="__codelineno-18-26" name="__codelineno-18-26"></a>        &lt;/sql:update&gt;
-<a href="#__codelineno-18-27" id="__codelineno-18-27" name="__codelineno-18-27"></a>sql:dateParam
-<a href="#__codelineno-18-28" id="__codelineno-18-28" name="__codelineno-18-28"></a>    - 用于设置 SQL 查询参数的指定日期
-<a href="#__codelineno-18-29" id="__codelineno-18-29" name="__codelineno-18-29"></a>    - 如:
-<a href="#__codelineno-18-30" id="__codelineno-18-30" name="__codelineno-18-30"></a>        &lt;sql:update dataSource="${db}" var="count"&gt;  
-<a href="#__codelineno-18-31" id="__codelineno-18-31" name="__codelineno-18-31"></a>           UPDATE Student SET date = ? WHERE Id = ?  
-<a href="#__codelineno-18-32" id="__codelineno-18-32" name="__codelineno-18-32"></a>           &lt;sql:dateParam value="&lt;%=new Date("2000/10/16")%&gt;" type="DATE" /&gt;  
-<a href="#__codelineno-18-33" id="__codelineno-18-33" name="__codelineno-18-33"></a>           &lt;sql:param value="&lt;%=studentId%&gt;" /&gt;  
-<a href="#__codelineno-18-34" id="__codelineno-18-34" name="__codelineno-18-34"></a>        &lt;/sql:update&gt;
-<a href="#__codelineno-18-35" id="__codelineno-18-35" name="__codelineno-18-35"></a>sql:transaction
-<a href="#__codelineno-18-36" id="__codelineno-18-36" name="__codelineno-18-36"></a>    - 用于事务管理
-<a href="#__codelineno-18-37" id="__codelineno-18-37" name="__codelineno-18-37"></a>    - 它用于将多个 sql:update 分组到公共事务中
-<a href="#__codelineno-18-38" id="__codelineno-18-38" name="__codelineno-18-38"></a>    - 如果在单个事务中对多个 SQL 查询进行分组，则数据库只会命中一次
-<a href="#__codelineno-18-39" id="__codelineno-18-39" name="__codelineno-18-39"></a>    - 如:
-<a href="#__codelineno-18-40" id="__codelineno-18-40" name="__codelineno-18-40"></a>        &lt;sql:transaction dataSource="${db}"&gt;  
-<a href="#__codelineno-18-41" id="__codelineno-18-41" name="__codelineno-18-41"></a>           &lt;sql:update var="count"&gt;  
-<a href="#__codelineno-18-42" id="__codelineno-18-42" name="__codelineno-18-42"></a>              UPDATE Student SET First_Name = 'Suraj' WHERE Id = 150  
-<a href="#__codelineno-18-43" id="__codelineno-18-43" name="__codelineno-18-43"></a>           &lt;/sql:update&gt;  
-<a href="#__codelineno-18-44" id="__codelineno-18-44" name="__codelineno-18-44"></a>           &lt;sql:update var="count"&gt;  
-<a href="#__codelineno-18-45" id="__codelineno-18-45" name="__codelineno-18-45"></a>              UPDATE Student SET Last_Name= 'Saifi' WHERE Id = 153  
-<a href="#__codelineno-18-46" id="__codelineno-18-46" name="__codelineno-18-46"></a>           &lt;/sql:update&gt;  
-<a href="#__codelineno-18-47" id="__codelineno-18-47" name="__codelineno-18-47"></a>           &lt;sql:update var="count"&gt;  
-<a href="#__codelineno-18-48" id="__codelineno-18-48" name="__codelineno-18-48"></a>             INSERT INTO Student VALUES (154,'Supriya', 'Jaiswal', '1995/10/6');  
-<a href="#__codelineno-18-49" id="__codelineno-18-49" name="__codelineno-18-49"></a>           &lt;/sql:update&gt;  
-<a href="#__codelineno-18-50" id="__codelineno-18-50" name="__codelineno-18-50"></a>        &lt;/sql:transaction&gt;
+<div class="highlight"><span class="filename">sql 标签</span><pre><span></span><code><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a>sql:setDataSource
+<a href="#__codelineno-17-2" id="__codelineno-17-2" name="__codelineno-17-2"></a>    - 用于创建仅适用于原型设计的简单数据源
+<a href="#__codelineno-17-3" id="__codelineno-17-3" name="__codelineno-17-3"></a>    - 如: &lt;sql:setDataSource var="db"
+<a href="#__codelineno-17-4" id="__codelineno-17-4" name="__codelineno-17-4"></a>           driver="com.mysql.cj.jdbc.Driver"
+<a href="#__codelineno-17-5" id="__codelineno-17-5" name="__codelineno-17-5"></a>           url="jdbc:mysql://localhost:3306/tmp"
+<a href="#__codelineno-17-6" id="__codelineno-17-6" name="__codelineno-17-6"></a>           user="root"
+<a href="#__codelineno-17-7" id="__codelineno-17-7" name="__codelineno-17-7"></a>           password="2147483647"/&gt;
+<a href="#__codelineno-17-8" id="__codelineno-17-8" name="__codelineno-17-8"></a>sql:query
+<a href="#__codelineno-17-9" id="__codelineno-17-9" name="__codelineno-17-9"></a>    - 用于执行在其 sql 属性或正文中定义的 SQL 查询
+<a href="#__codelineno-17-10" id="__codelineno-17-10" name="__codelineno-17-10"></a>    - 如:
+<a href="#__codelineno-17-11" id="__codelineno-17-11" name="__codelineno-17-11"></a>        &lt;sql:query var="resultSet" dataSource="${db}"&gt;
+<a href="#__codelineno-17-12" id="__codelineno-17-12" name="__codelineno-17-12"></a>            select * from tmp
+<a href="#__codelineno-17-13" id="__codelineno-17-13" name="__codelineno-17-13"></a>        &lt;/sql:query&gt;
+<a href="#__codelineno-17-14" id="__codelineno-17-14" name="__codelineno-17-14"></a>sql:update
+<a href="#__codelineno-17-15" id="__codelineno-17-15" name="__codelineno-17-15"></a>    - 用于执行在其 sql 属性或标记正文中定义的 SQL DML 查询
+<a href="#__codelineno-17-16" id="__codelineno-17-16" name="__codelineno-17-16"></a>    - 如:
+<a href="#__codelineno-17-17" id="__codelineno-17-17" name="__codelineno-17-17"></a>        &lt;sql:query var="resultSet" dataSource="${db}"&gt;
+<a href="#__codelineno-17-18" id="__codelineno-17-18" name="__codelineno-17-18"></a>            INSERT INTO Students VALUES (154,'Nasreen', 'jaha', 25); 
+<a href="#__codelineno-17-19" id="__codelineno-17-19" name="__codelineno-17-19"></a>        &lt;/sql:query&gt;
+<a href="#__codelineno-17-20" id="__codelineno-17-20" name="__codelineno-17-20"></a>sql:param
+<a href="#__codelineno-17-21" id="__codelineno-17-21" name="__codelineno-17-21"></a>    - 用于在 SQL 语句中设置参数值 (用于 sql:query, sql:update)
+<a href="#__codelineno-17-22" id="__codelineno-17-22" name="__codelineno-17-22"></a>    - 如:
+<a href="#__codelineno-17-23" id="__codelineno-17-23" name="__codelineno-17-23"></a>        &lt;sql:update var="count" dataSource="${db}"&gt;  
+<a href="#__codelineno-17-24" id="__codelineno-17-24" name="__codelineno-17-24"></a>            DELETE FROM Students WHERE Id = ?  
+<a href="#__codelineno-17-25" id="__codelineno-17-25" name="__codelineno-17-25"></a>            &lt;sql:param value="${StudentId}" /&gt;  
+<a href="#__codelineno-17-26" id="__codelineno-17-26" name="__codelineno-17-26"></a>        &lt;/sql:update&gt;
+<a href="#__codelineno-17-27" id="__codelineno-17-27" name="__codelineno-17-27"></a>sql:dateParam
+<a href="#__codelineno-17-28" id="__codelineno-17-28" name="__codelineno-17-28"></a>    - 用于设置 SQL 查询参数的指定日期
+<a href="#__codelineno-17-29" id="__codelineno-17-29" name="__codelineno-17-29"></a>    - 如:
+<a href="#__codelineno-17-30" id="__codelineno-17-30" name="__codelineno-17-30"></a>        &lt;sql:update dataSource="${db}" var="count"&gt;  
+<a href="#__codelineno-17-31" id="__codelineno-17-31" name="__codelineno-17-31"></a>           UPDATE Student SET date = ? WHERE Id = ?  
+<a href="#__codelineno-17-32" id="__codelineno-17-32" name="__codelineno-17-32"></a>           &lt;sql:dateParam value="&lt;%=new Date("2000/10/16")%&gt;" type="DATE" /&gt;  
+<a href="#__codelineno-17-33" id="__codelineno-17-33" name="__codelineno-17-33"></a>           &lt;sql:param value="&lt;%=studentId%&gt;" /&gt;  
+<a href="#__codelineno-17-34" id="__codelineno-17-34" name="__codelineno-17-34"></a>        &lt;/sql:update&gt;
+<a href="#__codelineno-17-35" id="__codelineno-17-35" name="__codelineno-17-35"></a>sql:transaction
+<a href="#__codelineno-17-36" id="__codelineno-17-36" name="__codelineno-17-36"></a>    - 用于事务管理
+<a href="#__codelineno-17-37" id="__codelineno-17-37" name="__codelineno-17-37"></a>    - 它用于将多个 sql:update 分组到公共事务中
+<a href="#__codelineno-17-38" id="__codelineno-17-38" name="__codelineno-17-38"></a>    - 如果在单个事务中对多个 SQL 查询进行分组，则数据库只会命中一次
+<a href="#__codelineno-17-39" id="__codelineno-17-39" name="__codelineno-17-39"></a>    - 如:
+<a href="#__codelineno-17-40" id="__codelineno-17-40" name="__codelineno-17-40"></a>        &lt;sql:transaction dataSource="${db}"&gt;  
+<a href="#__codelineno-17-41" id="__codelineno-17-41" name="__codelineno-17-41"></a>           &lt;sql:update var="count"&gt;  
+<a href="#__codelineno-17-42" id="__codelineno-17-42" name="__codelineno-17-42"></a>              UPDATE Student SET First_Name = 'Suraj' WHERE Id = 150  
+<a href="#__codelineno-17-43" id="__codelineno-17-43" name="__codelineno-17-43"></a>           &lt;/sql:update&gt;  
+<a href="#__codelineno-17-44" id="__codelineno-17-44" name="__codelineno-17-44"></a>           &lt;sql:update var="count"&gt;  
+<a href="#__codelineno-17-45" id="__codelineno-17-45" name="__codelineno-17-45"></a>              UPDATE Student SET Last_Name= 'Saifi' WHERE Id = 153  
+<a href="#__codelineno-17-46" id="__codelineno-17-46" name="__codelineno-17-46"></a>           &lt;/sql:update&gt;  
+<a href="#__codelineno-17-47" id="__codelineno-17-47" name="__codelineno-17-47"></a>           &lt;sql:update var="count"&gt;  
+<a href="#__codelineno-17-48" id="__codelineno-17-48" name="__codelineno-17-48"></a>             INSERT INTO Student VALUES (154,'Supriya', 'Jaiswal', '1995/10/6');  
+<a href="#__codelineno-17-49" id="__codelineno-17-49" name="__codelineno-17-49"></a>           &lt;/sql:update&gt;  
+<a href="#__codelineno-17-50" id="__codelineno-17-50" name="__codelineno-17-50"></a>        &lt;/sql:transaction&gt;
 </code></pre></div>
 </article>
 </div>
@@ -685,6 +764,19 @@
                 </span>
                 Servlet
               </div>
+</div>
+</a>
+<a aria-label="下一页: 大纲" class="md-footer__link md-footer__link--next" href="../%E5%A4%A7%E7%BA%B2/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                  下一页
+                </span>
+                大纲
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
 </div>
 </a>
 </nav>
