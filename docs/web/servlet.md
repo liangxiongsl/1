@@ -8,10 +8,10 @@
 
 |对象   |作用域 |参数   |属性|	获取
 |:-:|:-:|:-:|:-:|:-:|
-|context        |application    |init   |y|	getServletContext()|
-|session        |session        |       |y|	`<request>.getSession()`|
-|request        |request        |请求   |y|	自然存在|
-|cookie	|浏览器缓存|	|	y|`<request>.getCookies()` / Cookie()|
+|ServletContext        |application    |init   |y|	getServletContext()|
+|HttpSession        |session        |       |y|	`<request>.getSession()`|
+|HttpServletRequest        |request        |请求   |y|	自然存在|
+|HttpCookie	|浏览器缓存|	|	y|`<request>.getCookies()` / Cookie()|
 |Servletconfig |app/servlet?       |init   |n|	getServletConfig()|
 |FilterConfig	|app	|	init|	n|	Filter.init(-)的参数中|
 
@@ -84,7 +84,7 @@ removeAttribute(-)
 	- **HttpSession**, **set/get/remove属性**
 
 ```title="2.ServletResponse 接口方法"
-
+sendRedirect(<str>) - 重定向
 ```
 
 ## 3.转发 ##

@@ -1,0 +1,17 @@
+EL ${}	jsp <%= %>	Servlet/Object
+pageContext	pageContext	
+applicationScope	application	ServletContext
+sessionScope	session	HttpSession
+requestScope	request	HttpServletRequest
+pageScope		
+initParam		
+	page	
+param		Map<String, String>
+paramValues		Enumeration<String>
+header		String
+headerValues		Enumeration<String>
+cookie		HttpCookie
+	out	JSPWriter / PrintWriter
+	response	HttpServletResponse
+	config	
+	exception	

@@ -1,7 +1,5 @@
 
 
-###  ###
-
 ```title="jsp初始化"
 翻译JSP页面 - JSP translator将JSP翻译为<servlet>.java
 编译JSP页面 - complier编译.java文件
@@ -11,6 +9,30 @@
 请求处理 - 容器调用 _jspService() 方法
 销毁 - 容器调用 jspDestroy() 方法
 ```
+
+
+EL隐式变量, jsp隐式变量, Servlet 对比
+
+|EL ${} |jsp `<%= %>`     |Servlet/Object|
+|:-:|:-:|:-:|
+|pageContext    |pageContext    ||
+|applicationScope       |application    |ServletContext|
+|sessionScope   |session        |HttpSession|
+|requestScope   |request        |HttpServletRequest|
+|pageScope      |       ||
+|initParam      |       ||
+|       |page   ||
+|param  |       |Map<String, String>|
+|paramValues    |       |`Enumeration<String>`|
+|header |       |String|
+|headerValues   |       |`Enumeration<String>`|
+|cookie |       |HttpCookie|
+|       |out    |JSPWriter / PrintWriter|
+|       |response       |HttpServletResponse|
+|       |config ||
+|       |exception      ||
+
+// param, paramValues, header, headerValues, cookie 均是 request能获取的对象
 
 api:
 
@@ -42,6 +64,8 @@ HttpJspPage:
 !!! tip
 	- jsp 特有功能: 往字符串里添加 expression`<%= %>`
 	- EL 特有功能: 往字符串里添加 EL `${}`
+
+###  ###
 
 
 ## 1.指令元素 ##
@@ -178,28 +202,6 @@ headerValues
 cookie
 initParam - 返回 所有初始化参数的map
 pageContext - 返回 page/request/session/application 四个 scope内属性的map
-```
-
-```title="EL隐式变量与jsp隐式变量对比"
-EL ${}				jsp <%= %>
-
-pageContext			pageContext
-applicationScope	application
-sessionScope		session
-requestScope		request
-pageScope
-initParam
-					page
-param
-paramValues
-header
-headerValues
-cookie
-					out
-					response
-					config
-					exception
-// param, paramValues, header, headerValues, cookie 均是 request能获取的对象
 ```
 
 
