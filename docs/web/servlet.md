@@ -11,7 +11,7 @@
 |ServletContext        |application    |init   |y|	getServletContext()|
 |HttpSession        |session        |       |y|	`<request>.getSession()`|
 |HttpServletRequest        |request        |请求   |y|	自然存在|
-|HttpCookie	|浏览器缓存|	|	y|`<request>.getCookies()` / Cookie()|
+|HttpCookie	|浏览器缓存|	|	n|`<request>.getCookies()` / Cookie()|
 |Servletconfig |app/servlet?       |init   |n|	getServletConfig()|
 |FilterConfig	|app	|	init|	n|	Filter.init(-)的参数中|
 

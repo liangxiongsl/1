@@ -12,6 +12,9 @@ nav:
         - web/servlet.md
         - web/jsp.md
         - web/大纲.md
+    - android:
+        - android/index.md
+        - android/大纲.md
     
 extra_css:
     - res/extra.css
